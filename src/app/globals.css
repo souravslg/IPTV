@@ -73,7 +73,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  display: inline-block;
+  /* Removed inline-block to allow natural text wrapping */
 }
 
 /* Glass Card Effect */
@@ -83,7 +83,10 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   transition: all 0.3s ease;
+  max-width: 100%;
+  /* Ensure card doesn't overflow container */
 }
+
 
 .glass-card:hover {
   transform: translateY(-3px);
@@ -187,17 +190,56 @@ body {
 }
 
 @media (max-width: 767px) {
+  /* CRITICAL MOBILE FIXES */
 
-  /* Ensure no horizontal overflow */
-  body,
-  html {
+  /* 1. Force everything to stay within viewport width */
+  html,
+  body {
+    width: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    position: relative;
+  }
+
+  /* 2. Prevent flex/grid items from forcing width */
+  * {
+    min-width: 0;
+  }
+
+  /* 3. Aggressively break words to prevent text overflow */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  div {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: break-word;
+    /* Ensure long words break */
+    hyphens: auto;
+  }
+
+  /* 4. Ensure containers have padding */
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    overflow: hidden;
+    /* Clip any localized overflow */
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 
   /* Smaller cards on mobile */
   .glass-card {
     border-radius: 12px;
+    width: 100% !important;
+    /* Force full width within padding */
+    margin: 0 !important;
   }
 
   /* Adjust hover effects for touch */

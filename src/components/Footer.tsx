@@ -79,7 +79,7 @@ export default function Footer() {
                     {/* Quick Links */}
                     <div>
                         <h4 style={{
-                            fontSize: '16px',
+                            fontSize: '18px',
                             fontWeight: '700',
                             marginBottom: '20px',
                             color: '#ffffff',
@@ -88,54 +88,19 @@ export default function Footer() {
                         </h4>
                         <ul style={{
                             listStyle: 'none',
+                            padding: 0,
                         }}>
-                            {['Home', 'Features', 'Pricing', 'About Us', 'Contact'].map((link, idx) => (
-                                <li key={idx} style={{ marginBottom: '12px' }}>
-                                    <a
-                                        href={`#${link.toLowerCase().replace(' ', '-')}`}
-                                        style={{
-                                            color: '#a0aec0',
-                                            textDecoration: 'none',
-                                            fontSize: '14px',
-                                            transition: 'color 0.3s ease',
-                                        }}
-                                        onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
-                                        onMouseLeave={(e) => e.currentTarget.style.color = '#a0aec0'}
-                                    >
-                                        {link}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Support */}
-                    <div>
-                        <h4 style={{
-                            fontSize: '16px',
-                            fontWeight: '700',
-                            marginBottom: '20px',
-                            color: '#ffffff',
-                        }}>
-                            Support
-                        </h4>
-                        <ul style={{
-                            listStyle: 'none',
-                        }}>
-                            {['Help Center', 'FAQ', 'Setup Guide', 'Device Support', 'Terms of Service'].map((link, idx) => (
-                                <li key={idx} style={{ marginBottom: '12px' }}>
-                                    <a
-                                        href="#"
-                                        style={{
-                                            color: '#a0aec0',
-                                            textDecoration: 'none',
-                                            fontSize: '14px',
-                                            transition: 'color 0.3s ease',
-                                        }}
-                                        onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
-                                        onMouseLeave={(e) => e.currentTarget.style.color = '#a0aec0'}
-                                    >
-                                        {link}
+                            {['Features', 'About', 'Pricing'].map((item) => (
+                                <li key={item} style={{ marginBottom: '12px' }}>
+                                    <a href={`#${item.toLowerCase()}`} style={{
+                                        color: '#a0aec0',
+                                        textDecoration: 'none',
+                                        transition: 'color 0.3s ease',
+                                        fontSize: '14px',
+                                        display: 'block', // Easier to click on mobile
+                                        padding: '4px 0',
+                                    }}>
+                                        {item}
                                     </a>
                                 </li>
                             ))}
@@ -143,9 +108,9 @@ export default function Footer() {
                     </div>
 
                     {/* Contact */}
-                    <div id="contact">
+                    <div>
                         <h4 style={{
-                            fontSize: '16px',
+                            fontSize: '18px',
                             fontWeight: '700',
                             marginBottom: '20px',
                             color: '#ffffff',
@@ -154,41 +119,20 @@ export default function Footer() {
                         </h4>
                         <ul style={{
                             listStyle: 'none',
+                            padding: 0,
+                            color: '#a0aec0',
+                            fontSize: '14px',
                         }}>
-                            <li style={{
-                                color: '#a0aec0',
-                                fontSize: '14px',
-                                marginBottom: '12px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                            }}>
+                            <li style={{ marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <span>📧</span>
                                 <a href="mailto:sourav@iptvindia.co.in" style={{
-                                    color: '#a0aec0',
+                                    color: '#667eea',
                                     textDecoration: 'none',
                                 }}>
                                     sourav@iptvindia.co.in
                                 </a>
                             </li>
-                            <li style={{
-                                color: '#a0aec0',
-                                fontSize: '14px',
-                                marginBottom: '12px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                            }}>
-                                <span>📞</span>
-                                +1 (555) 123-4567
-                            </li>
-                            <li style={{
-                                color: '#a0aec0',
-                                fontSize: '14px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                            }}>
+                            <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <span>⏰</span>
                                 24/7 Support Available
                             </li>

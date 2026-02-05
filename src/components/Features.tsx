@@ -40,7 +40,7 @@ export default function Features() {
 
     return (
         <section id="features" style={{
-            padding: 'clamp(60px, 10vh, 100px) clamp(16px, 5vw, 24px)',
+            padding: '60px 20px', // Mobile padding
             position: 'relative',
         }}>
             <div style={{
@@ -50,20 +50,21 @@ export default function Features() {
                 {/* Section Header */}
                 <div style={{
                     textAlign: 'center',
-                    marginBottom: '60px',
+                    marginBottom: '40px',
                 }}>
                     <h2 style={{
-                        fontSize: 'clamp(32px, 5vw, 48px)',
+                        fontSize: '28px', // Mobile font size
                         fontWeight: '800',
                         marginBottom: '16px',
-                    }}>
+                    }} className="section-title">
                         Why Choose <span className="gradient-text">SrV Creation IPTV</span>
                     </h2>
                     <p style={{
-                        fontSize: '18px',
+                        fontSize: '16px',
                         color: '#a0aec0',
                         maxWidth: '600px',
                         margin: '0 auto',
+                        lineHeight: '1.6',
                     }}>
                         Cutting-edge technology meets exceptional entertainment
                     </p>
@@ -71,39 +72,42 @@ export default function Features() {
 
                 {/* Features Grid */}
                 <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-                    gap: 'clamp(20px, 3vw, 30px)',
-                }}>
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    width: '100%',
+                }} className="features-grid">
                     {features.map((feature, index) => (
                         <div
                             key={index}
                             className="glass-card"
                             style={{
-                                padding: 'clamp(20px, 4vw, 40px)',
-                                animationDelay: `${index * 0.1}s`,
+                                padding: '24px', // Standard mobile padding
                             }}
                         >
                             <div
                                 className="feature-icon"
                                 style={{
                                     background: feature.gradient,
+                                    width: '48px',
+                                    height: '48px',
+                                    fontSize: '24px',
                                 }}
                             >
                                 {feature.icon}
                             </div>
                             <h3 style={{
-                                fontSize: '22px',
+                                fontSize: '20px',
                                 fontWeight: '700',
-                                marginBottom: '12px',
+                                marginBottom: '10px',
                                 color: '#ffffff',
                             }}>
                                 {feature.title}
                             </h3>
                             <p style={{
                                 color: '#a0aec0',
-                                lineHeight: '1.7',
-                                fontSize: '15px',
+                                lineHeight: '1.6',
+                                fontSize: '14px',
                             }}>
                                 {feature.description}
                             </p>
@@ -111,6 +115,22 @@ export default function Features() {
                     ))}
                 </div>
             </div>
+            <style jsx>{`
+                /* FORCE MOBILE ONLY: No desktop media queries */
+                .section-title {
+                    font-size: 28px;
+                }
+                .features-grid {
+                    display: flex; /* Changed from grid to flex */
+                    flex-direction: column; /* Force vertical stack */
+                    gap: 20px;
+                    width: 100%;
+                }
+                .glass-card {
+                    padding: 24px;
+                    width: 100%; /* Force full width */
+                }
+            `}</style>
         </section>
     );
 }

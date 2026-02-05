@@ -5,12 +5,13 @@ export default function Hero() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: 'clamp(80px, 15vh, 100px) clamp(16px, 5vw, 24px) clamp(40px, 10vh, 60px)',
+            padding: '100px 20px 60px', // Fixed padding for mobile base
             position: 'relative',
         }}>
             <div style={{
                 maxWidth: '1200px',
                 textAlign: 'center',
+                width: '100%', // Ensure it takes full width
             }} className="fade-in-up">
                 {/* Badge */}
                 <div style={{
@@ -18,9 +19,9 @@ export default function Hero() {
                     background: 'rgba(102, 126, 234, 0.1)',
                     border: '1px solid rgba(102, 126, 234, 0.3)',
                     borderRadius: '50px',
-                    padding: '8px 20px',
-                    marginBottom: '30px',
-                    fontSize: '14px',
+                    padding: '8px 16px',
+                    marginBottom: '24px',
+                    fontSize: '12px',
                     fontWeight: '600',
                     color: '#667eea',
                 }}>
@@ -29,14 +30,13 @@ export default function Hero() {
 
                 {/* Main Heading */}
                 <h1 style={{
-                    fontSize: 'clamp(32px, 7vw, 72px)',
+                    fontSize: '32px', // Base size for mobile
                     fontWeight: '800',
-                    lineHeight: '1.15',
-                    marginBottom: '24px',
+                    lineHeight: '1.2',
+                    marginBottom: '20px',
                     letterSpacing: '-0.02em',
-                    wordWrap: 'break-word',
-                    overflowWrap: 'break-word',
-                }}>
+                    maxWidth: '100%',
+                }} className="hero-heading">
                     Stream Your Favorite
                     <br />
                     <span className="gradient-text">TV Channels Anywhere</span>
@@ -44,99 +44,77 @@ export default function Hero() {
 
                 {/* Subheading */}
                 <p style={{
-                    fontSize: 'clamp(14px, 3.5vw, 20px)',
+                    fontSize: '16px', // Base size for mobile
                     color: '#a0aec0',
-                    maxWidth: '700px',
+                    maxWidth: '90%',
                     margin: '0 auto 40px',
                     lineHeight: '1.6',
-                    padding: '0 8px',
-                }}>
+                }} className="hero-subheading">
                     Experience crystal-clear IPTV streaming with thousands of channels,
                     on-demand content, and seamless playback across all your devices.
                 </p>
 
-                {/* Stats */}
+                {/* Stats - FORCE VERTICAL STACK */}
                 <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
-                    gap: 'clamp(16px, 3vw, 30px)',
-                    maxWidth: '900px',
+                    display: 'flex !important' as any,
+                    flexDirection: 'column',
+                    gap: '16px',
+                    maxWidth: '100%',
                     margin: '0 auto',
-                    padding: '0 8px',
+                    width: '100%',
+                    boxSizing: 'border-box',
                 }}>
-                    <div className="glass-card" style={{
-                        padding: '30px',
-                        textAlign: 'center',
-                    }}>
+                    <div className="glass-card" style={{ padding: '24px' }}>
                         <div style={{
-                            fontSize: '36px',
+                            fontSize: '32px',
                             fontWeight: '800',
-                            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
-                            marginBottom: '8px',
-                        }}>
+                            marginBottom: '4px',
+                        }} className="gradient-text-1 stat-number">
                             10,000+
                         </div>
-                        <div style={{
-                            color: '#a0aec0',
-                            fontSize: '14px',
-                            fontWeight: '500',
-                        }}>
+                        <div style={{ color: '#a0aec0', fontSize: '14px', fontWeight: '500' }}>
                             Live Channels
                         </div>
                     </div>
 
-                    <div className="glass-card" style={{
-                        padding: '30px',
-                        textAlign: 'center',
-                    }}>
+                    <div className="glass-card" style={{ padding: '24px' }}>
                         <div style={{
-                            fontSize: '36px',
+                            fontSize: '32px',
                             fontWeight: '800',
-                            background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
-                            marginBottom: '8px',
-                        }}>
+                            marginBottom: '4px',
+                        }} className="gradient-text-2 stat-number">
                             50,000+
                         </div>
-                        <div style={{
-                            color: '#a0aec0',
-                            fontSize: '14px',
-                            fontWeight: '500',
-                        }}>
+                        <div style={{ color: '#a0aec0', fontSize: '14px', fontWeight: '500' }}>
                             VOD Content
                         </div>
                     </div>
 
-                    <div className="glass-card" style={{
-                        padding: '30px',
-                        textAlign: 'center',
-                    }}>
+                    <div className="glass-card" style={{ padding: '24px' }}>
                         <div style={{
-                            fontSize: '36px',
+                            fontSize: '32px',
                             fontWeight: '800',
-                            background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
-                            marginBottom: '8px',
-                        }}>
+                            marginBottom: '4px',
+                        }} className="gradient-text-3 stat-number">
                             99.9%
                         </div>
-                        <div style={{
-                            color: '#a0aec0',
-                            fontSize: '14px',
-                            fontWeight: '500',
-                        }}>
+                        <div style={{ color: '#a0aec0', fontSize: '14px', fontWeight: '500' }}>
                             Uptime
                         </div>
                     </div>
                 </div>
             </div>
+            <style jsx>{`
+                .hero-heading {
+                    font-size: 32px !important;
+                }
+                .hero-subheading {
+                    font-size: 16px !important;
+                }
+                .gradient-text-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+                .gradient-text-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+                .gradient-text-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+            `}</style>
         </section>
     );
 }

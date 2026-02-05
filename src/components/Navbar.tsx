@@ -26,14 +26,17 @@ export default function Navbar() {
         alignItems: 'center',
       }}>
         {/* Logo */}
+        {/* Logo */}
         <Link href="/" style={{
-          fontSize: '24px',
+          fontSize: 'clamp(18px, 5vw, 24px)', // Slightly smaller minimum
           fontWeight: '800',
           textDecoration: 'none',
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
+          lineHeight: '1.2', // Allow multiline if needed
+          zIndex: 60, // Ensure it's above other elements
         }}>
           📺 SrV Creation IPTV
         </Link>
@@ -114,10 +117,17 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div style={{
-          background: 'rgba(10, 14, 39, 0.95)',
-          backdropFilter: 'blur(10px)',
+          position: 'absolute', // Absolute positioning correctly places it below navbar
+          top: '100%',
+          left: 0,
+          right: 0,
+          background: 'rgba(10, 14, 39, 0.98)', // Higher opacity for readability
+          backdropFilter: 'blur(20px)',
           padding: '20px',
-          display: 'none',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+          display: 'flex', // Changed from block to flex for better control
+          flexDirection: 'column',
+          gap: '10px',
         }} className="mobile-menu-content">
           <Link href="#features" style={{
             display: 'block',
@@ -180,9 +190,7 @@ export default function Navbar() {
           .mobile-menu-btn {
             display: block !important;
           }
-          .mobile-menu-content {
-            display: block !important;
-          }
+          /* .mobile-menu-content opacity handling is done via React state, no display override needed */
         }
       `}</style>
     </nav>

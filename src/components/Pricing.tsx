@@ -46,7 +46,7 @@ export default function Pricing() {
 
     return (
         <section id="pricing" style={{
-            padding: 'clamp(60px, 10vh, 100px) clamp(16px, 5vw, 24px)',
+            padding: '60px 20px', // Mobile padding
             position: 'relative',
         }}>
             <div style={{
@@ -56,174 +56,180 @@ export default function Pricing() {
                 {/* Section Header */}
                 <div style={{
                     textAlign: 'center',
-                    marginBottom: '60px',
+                    marginBottom: '40px',
                 }}>
                     <h2 style={{
-                        fontSize: 'clamp(32px, 5vw, 48px)',
+                        fontSize: '28px', // Mobile size
                         fontWeight: '800',
                         marginBottom: '16px',
-                    }}>
-                        Simple, <span className="gradient-text">Transparent Pricing</span>
+                    }} className="section-title">
+                        Choose Your Perfect
+                        <span className="gradient-text"> Plan</span>
                     </h2>
                     <p style={{
-                        fontSize: '18px',
+                        fontSize: '16px',
                         color: '#a0aec0',
                         maxWidth: '600px',
                         margin: '0 auto',
+                        lineHeight: '1.6',
                     }}>
-                        Choose the perfect plan for your streaming needs
+                        Flexible plans to fit your streaming needs.
                     </p>
                 </div>
 
-                {/* Pricing Cards */}
+                {/* Pricing Grid */}
                 <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
-                    gap: 'clamp(20px, 3vw, 30px)',
-                }}>
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '24px',
+                    width: '100%',
+                }} className="pricing-grid">
                     {plans.map((plan, index) => (
                         <div
                             key={index}
                             className="glass-card"
                             style={{
-                                padding: 'clamp(24px, 4vw, 40px)',
+                                padding: '30px 20px', // Mobile padding for cards
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between',
                                 position: 'relative',
                                 border: plan.popular ? '2px solid rgba(240, 147, 251, 0.5)' : '1px solid rgba(255, 255, 255, 0.1)',
-                                transform: plan.popular ? 'scale(1.05)' : 'scale(1)',
+                                transform: plan.popular ? 'scale(1)' : 'scale(1)', // No scale on mobile
                             }}
                         >
                             {plan.popular && (
-                                <div style={{
+                                <span style={{
                                     position: 'absolute',
-                                    top: '-15px',
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
+                                    top: '-12px',
+                                    right: '20px',
                                     background: plan.gradient,
-                                    padding: '6px 20px',
+                                    padding: '6px 14px',
                                     borderRadius: '50px',
                                     fontSize: '12px',
                                     fontWeight: '700',
-                                    textTransform: 'uppercase',
-                                    letterSpacing: '1px',
+                                    color: 'white',
+                                    boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
                                 }}>
                                     Most Popular
-                                </div>
+                                </span>
                             )}
 
-                            <div style={{
-                                textAlign: 'center',
-                                marginBottom: '30px',
-                            }}>
-                                <h3 style={{
-                                    fontSize: '24px',
-                                    fontWeight: '700',
-                                    marginBottom: '16px',
-                                    color: '#ffffff',
-                                }}>
-                                    {plan.name}
-                                </h3>
+                            <div>
                                 <div style={{
                                     display: 'flex',
-                                    alignItems: 'baseline',
-                                    justifyContent: 'center',
-                                    marginBottom: '8px',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    marginBottom: '20px',
                                 }}>
-                                    <span style={{
-                                        fontSize: '48px',
+                                    <h3 style={{
+                                        fontSize: '24px',
                                         fontWeight: '800',
-                                        background: plan.gradient,
-                                        WebkitBackgroundClip: 'text',
-                                        WebkitTextFillColor: 'transparent',
-                                        backgroundClip: 'text',
+                                        color: '#ffffff',
+                                    }}>
+                                        {plan.name}
+                                    </h3>
+                                </div>
+                                <div style={{ marginBottom: '24px' }}>
+                                    <span style={{
+                                        fontSize: '40px',
+                                        fontWeight: '800',
+                                        color: '#ffffff',
+                                        marginRight: '8px',
                                     }}>
                                         {plan.price}
                                     </span>
                                     <span style={{
                                         fontSize: '16px',
                                         color: '#a0aec0',
-                                        marginLeft: '4px',
+                                        fontWeight: '500',
                                     }}>
                                         {plan.period}
                                     </span>
                                 </div>
-                            </div>
-
-                            <ul style={{
-                                listStyle: 'none',
-                                marginBottom: '30px',
-                            }}>
-                                {plan.features.map((feature, idx) => (
-                                    <li
-                                        key={idx}
-                                        style={{
-                                            padding: '12px 0',
-                                            color: '#a0aec0',
-                                            fontSize: '15px',
+                                <ul style={{
+                                    listStyle: 'none',
+                                    marginBottom: '30px',
+                                    color: '#a0aec0',
+                                }}>
+                                    {plan.features.map((feature, fIndex) => (
+                                        <li key={fIndex} style={{
                                             display: 'flex',
                                             alignItems: 'center',
-                                            gap: '12px',
-                                        }}
-                                    >
-                                        <span style={{
-                                            color: '#667eea',
-                                            fontSize: '18px',
-                                        }}>✓</span>
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
+                                            gap: '10px',
+                                            marginBottom: '12px',
+                                            fontSize: '14px',
+                                        }}>
+                                            <span style={{ color: '#667eea' }}>✓</span> {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
 
-                            <a
-                                href="https://www.srvcreationservices.co.in/"
+                            <a href="https://www.srvcreationservices.co.in/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-primary"
                                 style={{
                                     width: '100%',
-                                    background: plan.popular ? plan.gradient : 'rgba(102, 126, 234, 0.2)',
-                                    border: plan.popular ? 'none' : '2px solid rgba(102, 126, 234, 0.5)',
-                                    display: 'block',
                                     textAlign: 'center',
+                                    marginTop: 'auto',
+                                    display: 'block',
                                     textDecoration: 'none',
-                                }}
-                            >
+                                }}>
                                 Get Started
                             </a>
+
+                            {/* Contact Info */}
+                            <div style={{
+                                textAlign: 'center',
+                                marginTop: '20px',
+                                padding: '16px',
+                                background: 'rgba(102, 126, 234, 0.1)',
+                                borderRadius: '12px',
+                                border: '1px solid rgba(102, 126, 234, 0.2)',
+                            }}>
+                                <p style={{
+                                    fontSize: '14px',
+                                    color: '#ffffff',
+                                    fontWeight: '600',
+                                }}>
+                                    📧 Contact us
+                                </p>
+                                <p style={{
+                                    fontSize: '13px',
+                                    color: '#a0aec0',
+                                    marginTop: '4px',
+                                }}>
+                                    <a href="mailto:sourav@iptvindia.co.in" style={{
+                                        color: '#667eea',
+                                        textDecoration: 'none',
+                                        fontWeight: '500',
+                                    }}>
+                                        sourav@iptvindia.co.in
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
-
-                {/* Contact Info */}
-                <div style={{
-                    textAlign: 'center',
-                    marginTop: '60px',
-                    padding: '30px',
-                    background: 'rgba(102, 126, 234, 0.1)',
-                    borderRadius: '20px',
-                    border: '1px solid rgba(102, 126, 234, 0.2)',
-                }}>
-                    <p style={{
-                        fontSize: '18px',
-                        color: '#ffffff',
-                        fontWeight: '600',
-                    }}>
-                        📧 Feel free to contact us
-                    </p>
-                    <p style={{
-                        fontSize: '16px',
-                        color: '#a0aec0',
-                        marginTop: '8px',
-                    }}>
-                        <a href="mailto:sourav@iptvindia.co.in" style={{
-                            color: '#667eea',
-                            textDecoration: 'none',
-                            fontWeight: '500',
-                        }}>
-                            sourav@iptvindia.co.in
-                        </a>
-                    </p>
-                </div>
             </div>
+            <style jsx>{`
+                /* FORCE MOBILE ONLY: No desktop grid */
+                .section-title {
+                    font-size: 28px;
+                }
+                .pricing-grid {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    width: 100%;
+                }
+                .glass-card {
+                    padding: 30px 20px;
+                    width: 100%;
+                }
+            `}</style>
         </section>
     );
 }
