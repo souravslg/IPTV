@@ -5,7 +5,7 @@ export default function Hero() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '100px 24px 60px',
+            padding: 'clamp(80px, 15vh, 100px) clamp(16px, 5vw, 24px) clamp(40px, 10vh, 60px)',
             position: 'relative',
         }}>
             <div style={{

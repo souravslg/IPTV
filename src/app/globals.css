@@ -171,21 +171,27 @@ body {
 @media (max-width: 768px) {
   body {
     font-size: 14px;
+    overflow-x: hidden;
+  }
+
+  /* Prevent horizontal scroll */
+  * {
+    max-width: 100vw;
   }
 
   /* Button adjustments */
   .btn-primary,
   .btn-secondary {
-    padding: 12px 24px;
+    padding: 12px 20px;
     font-size: 14px;
-    width: 100%;
-    max-width: 300px;
+    width: auto;
+    min-width: 120px;
   }
 
   /* Glass cards on mobile */
   .glass-card {
     border-radius: 15px;
-    padding: 20px !important;
+    margin: 0 !important;
   }
 
   .glass-card:hover {
@@ -199,50 +205,6 @@ body {
     font-size: 24px;
     margin-bottom: 15px;
   }
-
-  /* Reduce padding on sections */
-  section {
-    padding: 60px 16px !important;
-  }
-
-  /* Hero section adjustments */
-  h1 {
-    font-size: clamp(32px, 10vw, 48px) !important;
-    line-height: 1.2 !important;
-  }
-
-  h2 {
-    font-size: clamp(28px, 8vw, 36px) !important;
-  }
-
-  h3 {
-    font-size: 20px !important;
-  }
-
-  p {
-    font-size: 15px !important;
-  }
-
-  /* Pricing cards stacked on mobile */
-  .pricing-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Stats cards better spacing */
-  .stats-grid {
-    gap: 20px !important;
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Footer adjustments */
-  footer {
-    padding: 40px 16px 20px !important;
-  }
-
-  /* Navbar mobile friendly */
-  nav {
-    padding: 15px 16px !important;
-  }
 }
 
 /* Extra small devices */
@@ -250,19 +212,14 @@ body {
 
   .btn-primary,
   .btn-secondary {
-    padding: 10px 20px;
+    padding: 10px 18px;
     font-size: 13px;
+    min-width: 100px;
   }
 
-  .glass-card {
-    padding: 15px !important;
-  }
-
-  h1 {
-    font-size: clamp(28px, 10vw, 40px) !important;
-  }
-
-  section {
-    padding: 40px 12px !important;
+  .feature-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
   }
 }
