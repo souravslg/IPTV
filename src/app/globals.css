@@ -51,8 +51,13 @@ body {
 }
 
 @keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Gradient Text */
@@ -118,6 +123,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -129,9 +135,12 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
@@ -160,8 +169,100 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .btn-primary, .btn-secondary {
+  body {
+    font-size: 14px;
+  }
+
+  /* Button adjustments */
+  .btn-primary,
+  .btn-secondary {
     padding: 12px 24px;
     font-size: 14px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Glass cards on mobile */
+  .glass-card {
+    border-radius: 15px;
+    padding: 20px !important;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Feature icons smaller on mobile */
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  /* Reduce padding on sections */
+  section {
+    padding: 60px 16px !important;
+  }
+
+  /* Hero section adjustments */
+  h1 {
+    font-size: clamp(32px, 10vw, 48px) !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: clamp(28px, 8vw, 36px) !important;
+  }
+
+  h3 {
+    font-size: 20px !important;
+  }
+
+  p {
+    font-size: 15px !important;
+  }
+
+  /* Pricing cards stacked on mobile */
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stats cards better spacing */
+  .stats-grid {
+    gap: 20px !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 40px 16px 20px !important;
+  }
+
+  /* Navbar mobile friendly */
+  nav {
+    padding: 15px 16px !important;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .glass-card {
+    padding: 15px !important;
+  }
+
+  h1 {
+    font-size: clamp(28px, 10vw, 40px) !important;
+  }
+
+  section {
+    padding: 40px 12px !important;
   }
 }
