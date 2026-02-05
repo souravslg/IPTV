@@ -52,26 +52,6 @@ export default function Hero() {
                     on-demand content, and seamless playback across all your devices.
                 </p>
 
-                {/* CTA Buttons */}
-                <div style={{
-                    display: 'flex',
-                    gap: '20px',
-                    justifyContent: 'center',
-                    flexWrap: 'wrap',
-                    marginBottom: '60px',
-                }}>
-                    <button className="btn-primary" style={{
-                        fontSize: '16px',
-                    }}>
-                        Start Free Trial
-                    </button>
-                    <button className="btn-secondary" style={{
-                        fontSize: '16px',
-                    }}>
-                        Watch Demo
-                    </button>
-                </div>
-
                 {/* Stats */}
                 <div style={{
                     display: 'grid',
