@@ -18,7 +18,7 @@ export default function About() {
                         fontWeight: '800',
                         marginBottom: '16px',
                     }}>
-                        About <span className="gradient-text">IPTV Stream</span>
+                        About <span className="gradient-text">SrV Creation IPTV</span>
                     </h2>
                     <p style={{
                         fontSize: '18px',

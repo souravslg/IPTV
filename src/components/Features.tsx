@@ -57,7 +57,7 @@ export default function Features() {
                         fontWeight: '800',
                         marginBottom: '16px',
                     }}>
-                        Why Choose <span className="gradient-text">IPTV Stream</span>
+                        Why Choose <span className="gradient-text">SrV Creation IPTV</span>
                     </h2>
                     <p style={{
                         fontSize: '18px',

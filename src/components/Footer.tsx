@@ -30,7 +30,7 @@ export default function Footer() {
                             WebkitTextFillColor: 'transparent',
                             backgroundClip: 'text',
                         }}>
-                            📺 IPTV Stream
+                            📺 SrV Creation IPTV
                         </div>
                         <p style={{
                             color: '#a0aec0',
@@ -210,7 +210,7 @@ export default function Footer() {
                         color: '#a0aec0',
                         fontSize: '14px',
                     }}>
-                        © 2026 IPTV Stream. All rights reserved.
+                        © 2026 SrV Creation IPTV. All rights reserved.
                     </p>
                     <div style={{
                         display: 'flex',

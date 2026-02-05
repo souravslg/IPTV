@@ -35,7 +35,7 @@ export default function Navbar() {
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
         }}>
-          📺 IPTV Stream
+          📺 SrV Creation IPTV
         </Link>
 
         {/* Desktop Menu */}
@@ -50,7 +50,7 @@ export default function Navbar() {
             fontWeight: '500',
             transition: 'color 0.3s ease',
           }} onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
-             onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+            onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
             Features
           </Link>
           <Link href="#about" style={{
@@ -59,7 +59,7 @@ export default function Navbar() {
             fontWeight: '500',
             transition: 'color 0.3s ease',
           }} onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
-             onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+            onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
             About
           </Link>
           <Link href="#pricing" style={{
@@ -68,7 +68,7 @@ export default function Navbar() {
             fontWeight: '500',
             transition: 'color 0.3s ease',
           }} onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
-             onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+            onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
             Pricing
           </Link>
           <Link href="#contact" style={{
@@ -77,7 +77,7 @@ export default function Navbar() {
             fontWeight: '500',
             transition: 'color 0.3s ease',
           }} onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
-             onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+            onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
             Contact
           </Link>
           <button className="btn-primary" style={{

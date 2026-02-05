@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IPTV Stream - Premium Live TV & On-Demand Streaming",
+  title: "SrV Creation IPTV - Premium Live TV & On-Demand Streaming",
   description: "Experience crystal-clear IPTV streaming with thousands of channels, on-demand content, and seamless playback across all your devices. 10,000+ live channels, 50,000+ VOD content, 99.9% uptime.",
   keywords: "IPTV, streaming, live TV, on-demand, 4K streaming, HD channels, VOD, television",
 };
