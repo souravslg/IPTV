@@ -1,7 +1,7 @@
 export default function About() {
     return (
         <section id="about" style={{
-            padding: '100px 24px',
+            padding: 'clamp(60px, 10vh, 100px) clamp(16px, 5vw, 24px)',
             position: 'relative',
         }}>
             <div style={{
@@ -33,13 +33,13 @@ export default function About() {
                 {/* Content Grid */}
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '40px',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+                    gap: 'clamp(20px, 4vw, 40px)',
                     marginBottom: '60px',
                 }}>
                     {/* What is IPTV */}
                     <div className="glass-card" style={{
-                        padding: '40px',
+                        padding: 'clamp(24px, 4vw, 40px)',
                     }}>
                         <div style={{
                             fontSize: '48px',
@@ -66,7 +66,7 @@ export default function About() {
 
                     {/* Our Mission */}
                     <div className="glass-card" style={{
-                        padding: '40px',
+                        padding: 'clamp(24px, 4vw, 40px)',
                     }}>
                         <div style={{
                             fontSize: '48px',
@@ -93,7 +93,7 @@ export default function About() {
 
                     {/* Why Choose Us */}
                     <div className="glass-card" style={{
-                        padding: '40px',
+                        padding: 'clamp(24px, 4vw, 40px)',
                     }}>
                         <div style={{
                             fontSize: '48px',
@@ -121,7 +121,7 @@ export default function About() {
 
                 {/* Key Benefits */}
                 <div className="glass-card" style={{
-                    padding: '50px',
+                    padding: 'clamp(30px, 5vw, 50px)',
                     background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)',
                 }}>
                     <h3 style={{
@@ -135,8 +135,8 @@ export default function About() {
                     </h3>
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                        gap: '30px',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))',
+                        gap: 'clamp(20px, 3vw, 30px)',
                     }}>
                         {[
                             { step: '1', title: 'Subscribe', desc: 'Choose your plan' },

@@ -6,7 +6,7 @@ export default function Footer() {
             background: 'rgba(10, 14, 39, 0.8)',
             backdropFilter: 'blur(10px)',
             borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-            padding: '60px 24px 30px',
+            padding: 'clamp(40px, 8vh, 60px) clamp(16px, 5vw, 24px) clamp(20px, 4vh, 30px)',
         }}>
             <div style={{
                 maxWidth: '1200px',

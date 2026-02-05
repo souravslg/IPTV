@@ -46,7 +46,7 @@ export default function Pricing() {
 
     return (
         <section id="pricing" style={{
-            padding: '100px 24px',
+            padding: 'clamp(60px, 10vh, 100px) clamp(16px, 5vw, 24px)',
             position: 'relative',
         }}>
             <div style={{
@@ -78,15 +78,15 @@ export default function Pricing() {
                 {/* Pricing Cards */}
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                    gap: '30px',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+                    gap: 'clamp(20px, 3vw, 30px)',
                 }}>
                     {plans.map((plan, index) => (
                         <div
                             key={index}
                             className="glass-card"
                             style={{
-                                padding: '40px',
+                                padding: 'clamp(24px, 4vw, 40px)',
                                 position: 'relative',
                                 border: plan.popular ? '2px solid rgba(240, 147, 251, 0.5)' : '1px solid rgba(255, 255, 255, 0.1)',
                                 transform: plan.popular ? 'scale(1.05)' : 'scale(1)',

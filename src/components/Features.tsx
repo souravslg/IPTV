@@ -40,7 +40,7 @@ export default function Features() {
 
     return (
         <section id="features" style={{
-            padding: '100px 24px',
+            padding: 'clamp(60px, 10vh, 100px) clamp(16px, 5vw, 24px)',
             position: 'relative',
         }}>
             <div style={{
@@ -72,15 +72,15 @@ export default function Features() {
                 {/* Features Grid */}
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '30px',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+                    gap: 'clamp(20px, 3vw, 30px)',
                 }}>
                     {features.map((feature, index) => (
                         <div
                             key={index}
                             className="glass-card"
                             style={{
-                                padding: '40px',
+                                padding: 'clamp(20px, 4vw, 40px)',
                                 animationDelay: `${index * 0.1}s`,
                             }}
                         >
