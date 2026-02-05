@@ -2,7 +2,7 @@ export default function Pricing() {
     const plans = [
         {
             name: 'Basic',
-            price: '$9.99',
+            price: '₹120',
             period: '/month',
             features: [
                 '5,000+ Live Channels',
@@ -16,7 +16,7 @@ export default function Pricing() {
         },
         {
             name: 'Premium',
-            price: '$19.99',
+            price: '₹240',
             period: '/month',
             features: [
                 '10,000+ Live Channels',
@@ -31,7 +31,7 @@ export default function Pricing() {
         },
         {
             name: 'Ultimate',
-            price: '$29.99',
+            price: '₹360',
             period: '/month',
             features: [
                 'All Channels Available',
