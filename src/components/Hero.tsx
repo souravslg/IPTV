@@ -29,11 +29,13 @@ export default function Hero() {
 
                 {/* Main Heading */}
                 <h1 style={{
-                    fontSize: 'clamp(40px, 8vw, 72px)',
+                    fontSize: 'clamp(32px, 7vw, 72px)',
                     fontWeight: '800',
-                    lineHeight: '1.1',
+                    lineHeight: '1.15',
                     marginBottom: '24px',
                     letterSpacing: '-0.02em',
+                    wordWrap: 'break-word',
+                    overflowWrap: 'break-word',
                 }}>
                     Stream Your Favorite
                     <br />
@@ -42,11 +44,12 @@ export default function Hero() {
 
                 {/* Subheading */}
                 <p style={{
-                    fontSize: 'clamp(16px, 2vw, 20px)',
+                    fontSize: 'clamp(14px, 3.5vw, 20px)',
                     color: '#a0aec0',
                     maxWidth: '700px',
                     margin: '0 auto 40px',
-                    lineHeight: '1.7',
+                    lineHeight: '1.6',
+                    padding: '0 8px',
                 }}>
                     Experience crystal-clear IPTV streaming with thousands of channels,
                     on-demand content, and seamless playback across all your devices.
@@ -55,10 +58,11 @@ export default function Hero() {
                 {/* Stats */}
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                    gap: '30px',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
+                    gap: 'clamp(16px, 3vw, 30px)',
                     maxWidth: '900px',
                     margin: '0 auto',
+                    padding: '0 8px',
                 }}>
                     <div className="glass-card" style={{
                         padding: '30px',
