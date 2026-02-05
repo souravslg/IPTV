@@ -193,7 +193,7 @@ export default function Pricing() {
                     ))}
                 </div>
 
-                {/* Money Back Guarantee */}
+                {/* Contact Info */}
                 <div style={{
                     textAlign: 'center',
                     marginTop: '60px',
@@ -207,14 +207,20 @@ export default function Pricing() {
                         color: '#ffffff',
                         fontWeight: '600',
                     }}>
-                        🛡️ 30-Day Money-Back Guarantee
+                        📧 Feel free to contact us
                     </p>
                     <p style={{
-                        fontSize: '14px',
+                        fontSize: '16px',
                         color: '#a0aec0',
                         marginTop: '8px',
                     }}>
-                        Try risk-free. If you're not satisfied, get a full refund within 30 days.
+                        <a href="mailto:sourav@iptvindia.co.in" style={{
+                            color: '#667eea',
+                            textDecoration: 'none',
+                            fontWeight: '500',
+                        }}>
+                            sourav@iptvindia.co.in
+                        </a>
                     </p>
                 </div>
             </div>
