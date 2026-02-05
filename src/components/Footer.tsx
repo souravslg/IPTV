@@ -164,11 +164,11 @@ export default function Footer() {
                                 gap: '8px',
                             }}>
                                 <span>📧</span>
-                                <a href="mailto:support@iptvstream.com" style={{
+                                <a href="mailto:sourav@iptvindia.co.in" style={{
                                     color: '#a0aec0',
                                     textDecoration: 'none',
                                 }}>
-                                    support@iptvstream.com
+                                    sourav@iptvindia.co.in
                                 </a>
                             </li>
                             <li style={{
