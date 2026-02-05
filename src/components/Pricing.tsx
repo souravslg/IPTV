@@ -173,16 +173,22 @@ export default function Pricing() {
                                 ))}
                             </ul>
 
-                            <button
+                            <a
+                                href="https://www.srvcreationservices.co.in/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="btn-primary"
                                 style={{
                                     width: '100%',
                                     background: plan.popular ? plan.gradient : 'rgba(102, 126, 234, 0.2)',
                                     border: plan.popular ? 'none' : '2px solid rgba(102, 126, 234, 0.5)',
+                                    display: 'block',
+                                    textAlign: 'center',
+                                    textDecoration: 'none',
                                 }}
                             >
                                 Get Started
-                            </button>
+                            </a>
                         </div>
                     ))}
                 </div>

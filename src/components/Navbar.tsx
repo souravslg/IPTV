@@ -80,12 +80,18 @@ export default function Navbar() {
             onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
             Contact
           </Link>
-          <button className="btn-primary" style={{
-            fontSize: '14px',
-            padding: '10px 24px',
-          }}>
+          <a
+            href="https://www.srvcreationservices.co.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{
+              fontSize: '14px',
+              padding: '10px 24px',
+              textDecoration: 'none',
+            }}>
             Get Started
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -149,12 +155,20 @@ export default function Navbar() {
           }} onClick={() => setIsOpen(false)}>
             Contact
           </Link>
-          <button className="btn-primary" style={{
-            width: '100%',
-            marginTop: '12px',
-          }}>
+          <a
+            href="https://www.srvcreationservices.co.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{
+              width: '100%',
+              marginTop: '12px',
+              display: 'block',
+              textAlign: 'center',
+              textDecoration: 'none',
+            }}>
             Get Started
-          </button>
+          </a>
         </div>
       )}
 
