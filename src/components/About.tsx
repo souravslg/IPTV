@@ -206,6 +206,28 @@ export default function About() {
                     padding: 24px;
                     width: 100%;
                 }
+
+                /* DESKTOP RESTORATION */
+                @media (min-width: 1024px) {
+                    .section-title {
+                        font-size: 48px !important;
+                    }
+                    .content-grid {
+                        display: grid !important;
+                        grid-template-columns: repeat(3, 1fr) !important;
+                        gap: 40px !important;
+                    }
+                    .benefits-card {
+                        padding: 60px !important;
+                    }
+                    .benefits-title {
+                        font-size: 36px !important;
+                    }
+                    .steps-grid {
+                        grid-template-columns: repeat(4, 1fr) !important;
+                        gap: 40px !important;
+                    }
+                }
             `}</style>
         </section>
     );

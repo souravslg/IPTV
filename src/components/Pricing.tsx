@@ -231,6 +231,26 @@ export default function Pricing() {
                     padding: 30px 20px;
                     width: 100%;
                 }
+
+                /* DESKTOP RESTORATION */
+                @media (min-width: 1024px) {
+                    .section-title {
+                        font-size: 48px !important;
+                    }
+                    .pricing-grid {
+                        display: grid !important;
+                        grid-template-columns: repeat(3, 1fr) !important;
+                        gap: 40px !important;
+                    }
+                    .glass-card {
+                        padding: 40px !important;
+                        width: auto !important;
+                        transition: transform 0.3s ease;
+                    }
+                    .glass-card:hover {
+                        transform: translateY(-10px) !important;
+                    }
+                }
             `}</style>
         </section>
     );

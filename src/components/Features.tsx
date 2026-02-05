@@ -132,6 +132,22 @@ export default function Features() {
                     padding: 24px;
                     width: 100%; /* Force full width */
                 }
+
+                /* DESKTOP RESTORATION */
+                @media (min-width: 1024px) {
+                    .section-title {
+                        font-size: 48px !important;
+                    }
+                    .features-grid {
+                        display: grid !important;
+                        grid-template-columns: repeat(3, 1fr) !important;
+                        gap: 30px !important;
+                    }
+                    .glass-card {
+                        padding: 40px !important;
+                        width: auto !important; /* Reset width */
+                    }
+                }
             `}</style>
         </section>
     );

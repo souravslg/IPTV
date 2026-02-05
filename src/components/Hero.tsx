@@ -72,23 +72,24 @@ export default function Hero() {
                             fontWeight: '800',
                             marginBottom: '4px',
                         }} className="gradient-text-1 stat-number">
-                            10,000+
+                            800+
                         </div>
                         <div style={{ color: '#a0aec0', fontSize: '14px', fontWeight: '500' }}>
-                            Live Channels
+                            Live HD/SD TV Channels
                         </div>
                     </div>
 
                     <div className="glass-card" style={{ padding: '24px' }}>
                         <div style={{
-                            fontSize: '32px',
+                            fontSize: '20px', // Smaller font for text list
                             fontWeight: '800',
                             marginBottom: '4px',
+                            lineHeight: '1.4',
                         }} className="gradient-text-2 stat-number">
-                            50,000+
+                            Android TV / Box / Mobile / PC
                         </div>
                         <div style={{ color: '#a0aec0', fontSize: '14px', fontWeight: '500' }}>
-                            VOD Content
+                            Supported Devices
                         </div>
                     </div>
 
@@ -116,6 +117,22 @@ export default function Hero() {
                 .gradient-text-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
                 .gradient-text-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
                 .gradient-text-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+                
+                /* DESKTOP RESTORATION */
+                @media (min-width: 1024px) {
+                    .hero-heading {
+                        font-size: 64px !important;
+                    }
+                    .hero-subheading {
+                        font-size: 20px !important;
+                    }
+                    .stats-grid {
+                        display: grid !important;
+                        grid-template-columns: repeat(3, 1fr) !important;
+                        gap: 30px !important;
+                        max-width: 900px !important;
+                    }
+                }
             `}</style>
         </section>
     );

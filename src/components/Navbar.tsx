@@ -44,6 +44,8 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div style={{
           display: 'flex',
+          flexDirection: 'row', // Explicitly horizontal
+          flexWrap: 'nowrap',   // Prevent wrapping
           gap: '32px',
           alignItems: 'center',
         }} className="desktop-menu">
