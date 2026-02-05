@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SRVCreation - Premium IPTV Service",
-  description: "Experience the future of TV with 4K streaming and anti-freeze technology.",
+  title: "IPTV Stream - Premium Live TV & On-Demand Streaming",
+  description: "Experience crystal-clear IPTV streaming with thousands of channels, on-demand content, and seamless playback across all your devices. 10,000+ live channels, 50,000+ VOD content, 99.9% uptime.",
+  keywords: "IPTV, streaming, live TV, on-demand, 4K streaming, HD channels, VOD, television",
 };
 
 export default function RootLayout({
@@ -17,11 +13,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-black text-white antialiased`}>
-        <Navbar />
+    <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0a0e27" />
+      </head>
+      <body>
         {children}
-        <Footer />
       </body>
     </html>
   );

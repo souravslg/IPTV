@@ -1,58 +1,116 @@
-import { Zap, Monitor, Tv, Shield } from 'lucide-react';
-
-const features = [
-    {
-        name: '4K Ultra HD Quality',
-        description: 'Experience crystal clear picture quality with our premium 4K streams.',
-        icon: Tv,
-    },
-    {
-        name: 'Anti-Freeze Technology',
-        description: '99.9% uptime guarantee with our advanced load balancing servers.',
-        icon: Zap,
-    },
-    {
-        name: 'Multi-Device Support',
-        description: 'Watch on your TV, Computer, Tablet, or Smartphone seamlessly.',
-        icon: Monitor,
-    },
-    {
-        name: 'Secure & Private',
-        description: 'Your viewing history and data are completely anonymous and encrypted.',
-        icon: Shield,
-    },
-];
-
 export default function Features() {
+    const features = [
+        {
+            icon: '📺',
+            title: 'HD & 4K Streaming',
+            description: 'Enjoy crystal-clear picture quality with support for HD, Full HD, and 4K resolution channels.',
+            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        },
+        {
+            icon: '🌍',
+            title: 'Global Coverage',
+            description: 'Access channels from around the world including sports, news, entertainment, and more.',
+            gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        },
+        {
+            icon: '📱',
+            title: 'Multi-Device Support',
+            description: 'Watch on any device - Smart TV, smartphone, tablet, computer, or streaming box.',
+            gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        },
+        {
+            icon: '⚡',
+            title: 'Lightning Fast',
+            description: 'Experience instant channel switching and minimal buffering with our optimized servers.',
+            gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+        },
+        {
+            icon: '🎬',
+            title: 'VOD Library',
+            description: 'Access thousands of movies and TV shows on-demand, available anytime you want.',
+            gradient: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+        },
+        {
+            icon: '🔒',
+            title: 'Secure & Private',
+            description: 'Your streaming activity is protected with enterprise-grade encryption and privacy.',
+            gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+        },
+    ];
+
     return (
-        <div id="features" className="py-24 bg-zinc-900 text-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center">
-                    <h2 className="text-3xl font-extrabold sm:text-4xl">
-                        Why Choose SRVCreation?
+        <section id="features" style={{
+            padding: '100px 24px',
+            position: 'relative',
+        }}>
+            <div style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
+            }}>
+                {/* Section Header */}
+                <div style={{
+                    textAlign: 'center',
+                    marginBottom: '60px',
+                }}>
+                    <h2 style={{
+                        fontSize: 'clamp(32px, 5vw, 48px)',
+                        fontWeight: '800',
+                        marginBottom: '16px',
+                    }}>
+                        Why Choose <span className="gradient-text">IPTV Stream</span>
                     </h2>
-                    <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
-                        We provide the most stable and high-quality IPTV service in the market.
+                    <p style={{
+                        fontSize: '18px',
+                        color: '#a0aec0',
+                        maxWidth: '600px',
+                        margin: '0 auto',
+                    }}>
+                        Cutting-edge technology meets exceptional entertainment
                     </p>
                 </div>
 
-                <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                    {features.map((feature) => (
-                        <div key={feature.name} className="relative group p-6 bg-zinc-800 rounded-xl hover:bg-zinc-750 transition-all border border-zinc-700 hover:border-indigo-500/50">
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl opacity-0 group-hover:opacity-20 transition duration-500 blur"></div>
-                            <div className="relative">
-                                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500/10 text-indigo-400 mb-5">
-                                    <feature.icon className="h-6 w-6" aria-hidden="true" />
-                                </div>
-                                <h3 className="text-lg font-medium text-white">{feature.name}</h3>
-                                <p className="mt-2 text-base text-gray-400">
-                                    {feature.description}
-                                </p>
+                {/* Features Grid */}
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: '30px',
+                }}>
+                    {features.map((feature, index) => (
+                        <div
+                            key={index}
+                            className="glass-card"
+                            style={{
+                                padding: '40px',
+                                animationDelay: `${index * 0.1}s`,
+                            }}
+                        >
+                            <div
+                                className="feature-icon"
+                                style={{
+                                    background: feature.gradient,
+                                }}
+                            >
+                                {feature.icon}
                             </div>
+                            <h3 style={{
+                                fontSize: '22px',
+                                fontWeight: '700',
+                                marginBottom: '12px',
+                                color: '#ffffff',
+                            }}>
+                                {feature.title}
+                            </h3>
+                            <p style={{
+                                color: '#a0aec0',
+                                lineHeight: '1.7',
+                                fontSize: '15px',
+                            }}>
+                                {feature.description}
+                            </p>
                         </div>
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

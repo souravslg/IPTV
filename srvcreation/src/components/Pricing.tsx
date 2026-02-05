@@ -1,77 +1,220 @@
-import { Check } from 'lucide-react';
-
-const tiers = [
-    {
-        name: '1 Month',
-        price: 10,
-        features: ['1 Connection', 'Standard Support', 'All Channels', 'VOD Library'],
-        featured: false,
-    },
-    {
-        name: '12 Months',
-        price: 60,
-        features: ['2 Connections', 'Premium Support', 'All Channels', '4K VOD Library', 'Anti-Freeze'],
-        featured: true,
-    },
-    {
-        name: 'Lifetime',
-        price: 150,
-        features: ['5 Connections', 'VIP Support', 'All Future Updates', 'Private Server Access'],
-        featured: false,
-    },
-];
-
 export default function Pricing() {
+    const plans = [
+        {
+            name: 'Basic',
+            price: '$9.99',
+            period: '/month',
+            features: [
+                '5,000+ Live Channels',
+                'HD Quality Streaming',
+                '2 Device Connections',
+                'VOD Library Access',
+                'Email Support',
+            ],
+            popular: false,
+            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        },
+        {
+            name: 'Premium',
+            price: '$19.99',
+            period: '/month',
+            features: [
+                '10,000+ Live Channels',
+                '4K Quality Streaming',
+                '5 Device Connections',
+                'Full VOD Library',
+                'Priority Support',
+                'EPG Guide',
+            ],
+            popular: true,
+            gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        },
+        {
+            name: 'Ultimate',
+            price: '$29.99',
+            period: '/month',
+            features: [
+                'All Channels Available',
+                '4K & 8K Streaming',
+                'Unlimited Devices',
+                'Complete VOD Library',
+                '24/7 VIP Support',
+                'Advanced EPG',
+                'Catch-up TV',
+            ],
+            popular: false,
+            gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        },
+    ];
+
     return (
-        <div id="pricing" className="py-24 bg-black">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center">
-                    <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                        Simple Pricing
+        <section id="pricing" style={{
+            padding: '100px 24px',
+            position: 'relative',
+        }}>
+            <div style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
+            }}>
+                {/* Section Header */}
+                <div style={{
+                    textAlign: 'center',
+                    marginBottom: '60px',
+                }}>
+                    <h2 style={{
+                        fontSize: 'clamp(32px, 5vw, 48px)',
+                        fontWeight: '800',
+                        marginBottom: '16px',
+                    }}>
+                        Simple, <span className="gradient-text">Transparent Pricing</span>
                     </h2>
-                    <p className="mt-4 text-xl text-gray-400">
-                        Choose the plan that fits your needs. No hidden fees.
+                    <p style={{
+                        fontSize: '18px',
+                        color: '#a0aec0',
+                        maxWidth: '600px',
+                        margin: '0 auto',
+                    }}>
+                        Choose the perfect plan for your streaming needs
                     </p>
                 </div>
 
-                <div className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-3">
-                    {tiers.map((tier) => (
+                {/* Pricing Cards */}
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: '30px',
+                }}>
+                    {plans.map((plan, index) => (
                         <div
-                            key={tier.name}
-                            className={`relative p-8 bg-zinc-900 border rounded-2xl flex flex-col ${tier.featured
-                                    ? 'border-indigo-500 shadow-2xl shadow-indigo-500/20 transform md:-translate-y-4'
-                                    : 'border-zinc-800'
-                                }`}
+                            key={index}
+                            className="glass-card"
+                            style={{
+                                padding: '40px',
+                                position: 'relative',
+                                border: plan.popular ? '2px solid rgba(240, 147, 251, 0.5)' : '1px solid rgba(255, 255, 255, 0.1)',
+                                transform: plan.popular ? 'scale(1.05)' : 'scale(1)',
+                            }}
                         >
-                            <div className="mb-4">
-                                <h3 className="text-xl font-semibold text-white">{tier.name}</h3>
-                                <p className="flex items-baseline mt-4">
-                                    <span className="text-4xl font-extrabold text-white">${tier.price}</span>
-                                    <span className="ml-1 text-xl text-gray-400">/period</span>
-                                </p>
+                            {plan.popular && (
+                                <div style={{
+                                    position: 'absolute',
+                                    top: '-15px',
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    background: plan.gradient,
+                                    padding: '6px 20px',
+                                    borderRadius: '50px',
+                                    fontSize: '12px',
+                                    fontWeight: '700',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '1px',
+                                }}>
+                                    Most Popular
+                                </div>
+                            )}
+
+                            <div style={{
+                                textAlign: 'center',
+                                marginBottom: '30px',
+                            }}>
+                                <h3 style={{
+                                    fontSize: '24px',
+                                    fontWeight: '700',
+                                    marginBottom: '16px',
+                                    color: '#ffffff',
+                                }}>
+                                    {plan.name}
+                                </h3>
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'baseline',
+                                    justifyContent: 'center',
+                                    marginBottom: '8px',
+                                }}>
+                                    <span style={{
+                                        fontSize: '48px',
+                                        fontWeight: '800',
+                                        background: plan.gradient,
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+                                        backgroundClip: 'text',
+                                    }}>
+                                        {plan.price}
+                                    </span>
+                                    <span style={{
+                                        fontSize: '16px',
+                                        color: '#a0aec0',
+                                        marginLeft: '4px',
+                                    }}>
+                                        {plan.period}
+                                    </span>
+                                </div>
                             </div>
 
-                            <ul className="mb-8 space-y-4 flex-1">
-                                {tier.features.map((feature) => (
-                                    <li key={feature} className="flex items-center text-gray-300">
-                                        <Check className="h-5 w-5 text-indigo-500 mr-3" />
+                            <ul style={{
+                                listStyle: 'none',
+                                marginBottom: '30px',
+                            }}>
+                                {plan.features.map((feature, idx) => (
+                                    <li
+                                        key={idx}
+                                        style={{
+                                            padding: '12px 0',
+                                            color: '#a0aec0',
+                                            fontSize: '15px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '12px',
+                                        }}
+                                    >
+                                        <span style={{
+                                            color: '#667eea',
+                                            fontSize: '18px',
+                                        }}>✓</span>
                                         {feature}
                                     </li>
                                 ))}
                             </ul>
 
                             <button
-                                className={`w-full py-3 px-6 rounded-lg font-medium transition-all ${tier.featured
-                                        ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/30'
-                                        : 'bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700'
-                                    }`}
+                                className="btn-primary"
+                                style={{
+                                    width: '100%',
+                                    background: plan.popular ? plan.gradient : 'rgba(102, 126, 234, 0.2)',
+                                    border: plan.popular ? 'none' : '2px solid rgba(102, 126, 234, 0.5)',
+                                }}
                             >
-                                Choose Plan
+                                Get Started
                             </button>
                         </div>
                     ))}
                 </div>
+
+                {/* Money Back Guarantee */}
+                <div style={{
+                    textAlign: 'center',
+                    marginTop: '60px',
+                    padding: '30px',
+                    background: 'rgba(102, 126, 234, 0.1)',
+                    borderRadius: '20px',
+                    border: '1px solid rgba(102, 126, 234, 0.2)',
+                }}>
+                    <p style={{
+                        fontSize: '18px',
+                        color: '#ffffff',
+                        fontWeight: '600',
+                    }}>
+                        🛡️ 30-Day Money-Back Guarantee
+                    </p>
+                    <p style={{
+                        fontSize: '14px',
+                        color: '#a0aec0',
+                        marginTop: '8px',
+                    }}>
+                        Try risk-free. If you're not satisfied, get a full refund within 30 days.
+                    </p>
+                </div>
             </div>
-        </div>
+        </section>
     );
 }

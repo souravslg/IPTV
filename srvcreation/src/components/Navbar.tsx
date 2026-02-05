@@ -1,75 +1,176 @@
+'use client';
+
 import Link from 'next/link';
-import { Menu, X, Tv } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    return (
-        <nav className="fixed w-full z-50 bg-black/90 backdrop-blur-sm border-b border-white/10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    <div className="flex items-center">
-                        <Link href="/" className="flex items-center space-x-2">
-                            <Tv className="h-8 w-8 text-indigo-500" />
-                            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-                                SRVCreation
-                            </span>
-                        </Link>
-                    </div>
+  return (
+    <nav style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 50,
+      background: 'rgba(10, 14, 39, 0.8)',
+      backdropFilter: 'blur(10px)',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '20px 24px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}>
+        {/* Logo */}
+        <Link href="/" style={{
+          fontSize: '24px',
+          fontWeight: '800',
+          textDecoration: 'none',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+        }}>
+          📺 IPTV Stream
+        </Link>
 
-                    <div className="hidden md:block">
-                        <div className="ml-10 flex items-baseline space-x-4">
-                            <Link href="#features" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                                Features
-                            </Link>
-                            <Link href="#pricing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                                Pricing
-                            </Link>
-                            <Link href="/player" className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                                Web Player
-                            </Link>
-                        </div>
-                    </div>
+        {/* Desktop Menu */}
+        <div style={{
+          display: 'flex',
+          gap: '32px',
+          alignItems: 'center',
+        }} className="desktop-menu">
+          <Link href="#features" style={{
+            color: '#ffffff',
+            textDecoration: 'none',
+            fontWeight: '500',
+            transition: 'color 0.3s ease',
+          }} onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
+             onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+            Features
+          </Link>
+          <Link href="#about" style={{
+            color: '#ffffff',
+            textDecoration: 'none',
+            fontWeight: '500',
+            transition: 'color 0.3s ease',
+          }} onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
+             onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+            About
+          </Link>
+          <Link href="#pricing" style={{
+            color: '#ffffff',
+            textDecoration: 'none',
+            fontWeight: '500',
+            transition: 'color 0.3s ease',
+          }} onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
+             onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+            Pricing
+          </Link>
+          <Link href="#contact" style={{
+            color: '#ffffff',
+            textDecoration: 'none',
+            fontWeight: '500',
+            transition: 'color 0.3s ease',
+          }} onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
+             onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
+            Contact
+          </Link>
+          <button className="btn-primary" style={{
+            fontSize: '14px',
+            padding: '10px 24px',
+          }}>
+            Get Started
+          </button>
+        </div>
 
-                    <div className="md:hidden">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-400 hover:text-white focus:outline-none"
-                        >
-                            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                        </button>
-                    </div>
-                </div>
-            </div>
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          style={{
+            display: 'none',
+            background: 'transparent',
+            border: 'none',
+            color: 'white',
+            fontSize: '24px',
+            cursor: 'pointer',
+          }}
+          className="mobile-menu-btn"
+        >
+          {isOpen ? '✕' : '☰'}
+        </button>
+      </div>
 
-            {isOpen && (
-                <div className="md:hidden bg-black/95">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <Link
-                            href="#features"
-                            className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Features
-                        </Link>
-                        <Link
-                            href="#pricing"
-                            className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Pricing
-                        </Link>
-                        <Link
-                            href="/player"
-                            className="bg-indigo-600 hover:bg-indigo-700 text-white block px-3 py-2 rounded-md text-base font-medium"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Web Player
-                        </Link>
-                    </div>
-                </div>
-            )}
-        </nav>
-    );
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div style={{
+          background: 'rgba(10, 14, 39, 0.95)',
+          backdropFilter: 'blur(10px)',
+          padding: '20px',
+          display: 'none',
+        }} className="mobile-menu-content">
+          <Link href="#features" style={{
+            display: 'block',
+            color: '#ffffff',
+            textDecoration: 'none',
+            padding: '12px 0',
+            fontWeight: '500',
+          }} onClick={() => setIsOpen(false)}>
+            Features
+          </Link>
+          <Link href="#about" style={{
+            display: 'block',
+            color: '#ffffff',
+            textDecoration: 'none',
+            padding: '12px 0',
+            fontWeight: '500',
+          }} onClick={() => setIsOpen(false)}>
+            About
+          </Link>
+          <Link href="#pricing" style={{
+            display: 'block',
+            color: '#ffffff',
+            textDecoration: 'none',
+            padding: '12px 0',
+            fontWeight: '500',
+          }} onClick={() => setIsOpen(false)}>
+            Pricing
+          </Link>
+          <Link href="#contact" style={{
+            display: 'block',
+            color: '#ffffff',
+            textDecoration: 'none',
+            padding: '12px 0',
+            fontWeight: '500',
+          }} onClick={() => setIsOpen(false)}>
+            Contact
+          </Link>
+          <button className="btn-primary" style={{
+            width: '100%',
+            marginTop: '12px',
+          }}>
+            Get Started
+          </button>
+        </div>
+      )}
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .desktop-menu {
+            display: none !important;
+          }
+          .mobile-menu-btn {
+            display: block !important;
+          }
+          .mobile-menu-content {
+            display: block !important;
+          }
+        }
+      `}</style>
+    </nav>
+  );
 }
