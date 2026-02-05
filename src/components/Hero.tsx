@@ -1,3 +1,5 @@
+'use client';
+
 export default function Hero() {
     return (
         <section style={{
@@ -54,9 +56,9 @@ export default function Hero() {
                     on-demand content, and seamless playback across all your devices.
                 </p>
 
-                {/* Stats - FORCE VERTICAL STACK */}
+                {/* Stats - MOBILE VERTICAL STACK */}
                 <div style={{
-                    display: 'flex !important' as any,
+                    display: 'flex',
                     flexDirection: 'column',
                     gap: '16px',
                     maxWidth: '100%',
@@ -106,10 +108,10 @@ export default function Hero() {
             </div>
             <style jsx>{`
                 .hero-heading {
-                    font-size: 32px !important;
+                    font-size: 32px;
                 }
                 .hero-subheading {
-                    font-size: 16px !important;
+                    font-size: 16px;
                 }
                 .gradient-text-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
                 .gradient-text-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
