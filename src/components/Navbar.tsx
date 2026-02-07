@@ -86,7 +86,7 @@ export default function Navbar() {
             Contact
           </Link>
           <a
-            href="https://wa.me/919811568285?text=I%20want%20Free%20Trial"
+            href="https://api.whatsapp.com/send/?phone=919144015850&text=I+want+Free+Trial&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary"
@@ -196,7 +196,7 @@ export default function Navbar() {
             Contact
           </Link>
           <a
-            href="https://wa.me/919811568285?text=I%20want%20Free%20Trial"
+            href="https://api.whatsapp.com/send/?phone=919144015850&text=I+want+Free+Trial&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary"

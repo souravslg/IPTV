@@ -65,7 +65,7 @@ export default function Hero() {
                     margin: '0 auto',
                     width: '100%',
                     boxSizing: 'border-box',
-                }}>
+                }} className="stats-grid">
                     <div className="glass-card" style={{ padding: '24px' }}>
                         <div style={{
                             fontSize: '32px',

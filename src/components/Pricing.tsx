@@ -117,10 +117,12 @@ export default function Pricing() {
                                 </span>
                             )}
 
-                            <div>
+                            <div style={{
+                                textAlign: 'center', // Center all content
+                            }}>
                                 <div style={{
                                     display: 'flex',
-                                    justifyContent: 'space-between',
+                                    justifyContent: 'center', // Center header
                                     alignItems: 'center',
                                     marginBottom: '20px',
                                 }}>
@@ -153,11 +155,13 @@ export default function Pricing() {
                                     listStyle: 'none',
                                     marginBottom: '30px',
                                     color: '#a0aec0',
+                                    padding: 0, // Remove default padding
                                 }}>
                                     {plan.features.map((feature, fIndex) => (
                                         <li key={fIndex} style={{
                                             display: 'flex',
                                             alignItems: 'center',
+                                            justifyContent: 'center', // Center list items
                                             gap: '10px',
                                             marginBottom: '12px',
                                             fontSize: '14px',
