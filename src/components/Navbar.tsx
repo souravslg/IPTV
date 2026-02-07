@@ -86,6 +86,34 @@ export default function Navbar() {
             Contact
           </Link>
           <a
+            href="https://wa.me/919811568285?text=I%20want%20Free%20Trial"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+            style={{
+              fontSize: '14px',
+              padding: '10px 24px',
+              textDecoration: 'none',
+              background: 'rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              color: 'white',
+              borderRadius: '50px',
+              fontWeight: '600',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            }}
+          >
+            Free Trial
+          </a>
+          <a
             href="https://www.srvcreationservices.co.in/"
             target="_blank"
             rel="noopener noreferrer"
@@ -167,6 +195,26 @@ export default function Navbar() {
           }} onClick={() => setIsOpen(false)}>
             Contact
           </Link>
+          <a
+            href="https://wa.me/919811568285?text=I%20want%20Free%20Trial"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+            style={{
+              width: '100%',
+              marginTop: '12px',
+              display: 'block',
+              textAlign: 'center',
+              textDecoration: 'none',
+              padding: '12px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              color: 'white',
+              borderRadius: '50px',
+              fontWeight: '600',
+            }}>
+            Free Trial
+          </a>
           <a
             href="https://www.srvcreationservices.co.in/"
             target="_blank"
