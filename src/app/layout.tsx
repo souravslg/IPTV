@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <meta name="theme-color" content="#0a0e27" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
       <body>
         {children}
