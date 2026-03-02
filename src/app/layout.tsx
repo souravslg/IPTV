@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SrV Creation IPTV - Premium Live TV & On-Demand Streaming",
-  description: "Experience crystal-clear IPTV streaming with thousands of channels, on-demand content, and seamless playback across all your devices. 10,000+ live channels, 50,000+ VOD content, 99.9% uptime.",
-  keywords: "IPTV, streaming, live TV, on-demand, 4K streaming, HD channels, VOD, television",
+  title: "Best IPTV Service Provider in India 2026 | SRV Creation",
+  description: "Looking for the best IPTV service provider in India? SRV Creation offers premium HD channels, fast streaming & affordable plans in 2026.",
+  keywords: "IPTV service provider, Best IPTV service India, Best IPTV service provider, Best IPTV service 2026, Best IPTV provider",
   icons: {
     icon: '/icon.svg',
+  },
+  verification: {
+    google: "A9He-y8FdLqsKoU2QWA5Rdcjn6C3r4WCcML6EZ5uW5Q",
   },
 };
 
