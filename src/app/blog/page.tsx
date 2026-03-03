@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
+import { getPublishedPosts, BlogPost } from '@/lib/supabase';
 
 export const metadata: Metadata = {
     title: 'IPTV Blog | Tips, Guides & News | SRV Creation India',
@@ -7,66 +9,27 @@ export const metadata: Metadata = {
     keywords: 'IPTV blog India, IPTV tips, best IPTV channels India, IPTV setup tips, IPTV news 2026',
 };
 
-const posts = [
-    {
-        slug: 'best-iptv-apps-india-2026',
-        category: 'Apps & Players',
-        title: 'Best IPTV Apps for India in 2026: TiviMate vs IPTV Smarters vs GSE',
-        excerpt: 'We tested every major IPTV player available in India. Here is our definitive 2026 ranking — with setup tips, pros, cons, and which app works best for your device.',
-        date: 'February 28, 2026',
-        readTime: '6 min read',
-        icon: '📱',
-    },
-    {
-        slug: 'how-to-watch-ipl-2026-iptv',
-        category: 'Sports Streaming',
-        title: 'How to Watch IPL 2026 Live in 4K Using IPTV — Complete Guide',
-        excerpt: 'Don\'t miss a single boundary. Learn how to stream IPL 2026 in crystal-clear 4K on your Smart TV, mobile, or Firestick using IPTV — with zero buffering guaranteed.',
-        date: 'February 20, 2026',
-        readTime: '5 min read',
-        icon: '🏏',
-    },
-    {
-        slug: 'iptv-vs-ott-india',
-        category: 'Comparison',
-        title: 'IPTV vs OTT (Netflix/Hotstar/Prime): Which Is Better Value in India?',
-        excerpt: 'Spending ₹2,000+ per month on multiple OTT subscriptions? We break down the real cost comparison between IPTV and traditional OTT platforms — the results may surprise you.',
-        date: 'February 12, 2026',
-        readTime: '7 min read',
-        icon: '⚖️',
-    },
-    {
-        slug: 'firestick-iptv-setup-india',
-        category: 'Setup Guides',
-        title: 'Amazon Firestick IPTV Setup India 2026: Step-by-Step Guide',
-        excerpt: 'Turn your Firestick into the ultimate entertainment hub. This beginner-friendly guide walks you through installing IPTV Smarters and TiviMate on Firestick in under 10 minutes.',
-        date: 'February 5, 2026',
-        readTime: '8 min read',
-        icon: '🔥',
-    },
-    {
-        slug: 'iptv-internet-speed-requirements',
-        category: 'Tips & Tricks',
-        title: 'What Internet Speed Do You Actually Need for IPTV in India?',
-        excerpt: 'Stop blaming your IPTV provider for buffering — it might be your connection. We explain exactly what speeds you need for SD, HD, and 4K IPTV streaming, and how to optimize your home network.',
-        date: 'January 28, 2026',
-        readTime: '4 min read',
-        icon: '⚡',
-    },
-    {
-        slug: 'iptv-smart-tv-india-guide',
-        category: 'Setup Guides',
-        title: 'How to Setup IPTV on Samsung & LG Smart TV India — 2026 Edition',
-        excerpt: 'Your Smart TV can do so much more than Netflix. Learn how to install IPTV on Samsung Tizen and LG webOS TVs with step-by-step screenshots and the best app recommendations.',
-        date: 'January 15, 2026',
-        readTime: '6 min read',
-        icon: '📺',
-    },
-];
+// Revalidate every 60 seconds so new posts appear without redeploying
+export const revalidate = 60;
 
-const categories = ['All', 'Setup Guides', 'Sports Streaming', 'Apps & Players', 'Comparison', 'Tips & Tricks'];
+function formatDate(iso: string) {
+    return new Date(iso).toLocaleDateString('en-IN', {
+        day: '2-digit', month: 'long', year: 'numeric',
+    });
+}
 
-export default function BlogPage() {
+function stripHtml(html: string) {
+    return html.replace(/<[^>]*>/g, '').trim();
+}
+
+function getExcerpt(post: BlogPost) {
+    if (post.meta_description) return post.meta_description;
+    return stripHtml(post.content ?? '').substring(0, 180) + '…';
+}
+
+export default async function BlogPage() {
+    const posts = await getPublishedPosts();
+
     return (
         <>
             {/* Header */}
@@ -102,75 +65,88 @@ export default function BlogPage() {
                 </div>
             </section>
 
-            {/* Category Filter */}
-            <section style={{ padding: '32px 0 0', borderBottom: '1px solid #dce8ff' }}>
-                <div className="container">
-                    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center', paddingBottom: '32px' }}>
-                        {categories.map((cat, i) => (
-                            <span key={cat} style={{
-                                padding: '7px 18px',
-                                borderRadius: '100px',
-                                fontSize: '0.82rem',
-                                fontWeight: 600,
-                                border: '1px solid',
-                                borderColor: i === 0 ? '#1a73e8' : '#dce8ff',
-                                background: i === 0 ? '#1a73e8' : '#fff',
-                                color: i === 0 ? '#fff' : '#374151',
-                                cursor: 'pointer',
-                            }}>
-                                {cat}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Blog Grid */}
-            <section>
+            <section style={{ padding: '60px 0 80px' }}>
                 <div className="container">
-                    {/* Featured Post */}
-                    <div className="card" style={{ padding: '0', overflow: 'hidden', marginBottom: '40px', display: 'grid', gridTemplateColumns: '1fr', background: '#eef4ff', borderColor: '#c3d9ff' }}>
-                        <div style={{ padding: '40px 36px' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-                                <span style={{ background: '#1a73e8', color: '#fff', fontSize: '0.72rem', fontWeight: 700, padding: '3px 10px', borderRadius: '100px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>⭐ Featured</span>
-                                <span style={{ fontSize: '0.8rem', color: '#6b7a99' }}>{posts[0].category}</span>
-                            </div>
-                            <div style={{ fontSize: '3rem', marginBottom: '16px' }}>{posts[0].icon}</div>
-                            <h2 style={{ fontSize: 'clamp(1.3rem, 3vw, 2rem)', marginBottom: '14px', lineHeight: 1.3 }}>{posts[0].title}</h2>
-                            <p style={{ marginBottom: '24px', fontSize: '1rem', lineHeight: 1.75 }}>{posts[0].excerpt}</p>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-                                <span style={{ fontSize: '0.82rem', color: '#6b7a99' }}>📅 {posts[0].date}</span>
-                                <span style={{ fontSize: '0.82rem', color: '#6b7a99' }}>⏱ {posts[0].readTime}</span>
-                                <Link href={`/blog/${posts[0].slug}`} className="btn btn-primary" style={{ fontSize: '0.875rem', padding: '10px 22px', minHeight: '40px' }}>
-                                    Read Article →
-                                </Link>
+
+                    {/* No posts yet */}
+                    {posts.length === 0 && (
+                        <div style={{ textAlign: 'center', padding: '80px 0', color: '#6b7a99' }}>
+                            <div style={{ fontSize: '3rem', marginBottom: '16px' }}>📭</div>
+                            <h2 style={{ marginBottom: '8px' }}>No articles yet</h2>
+                            <p>Check back soon — we are cooking up some great content!</p>
+                        </div>
+                    )}
+
+                    {/* Featured Post (first post) */}
+                    {posts.length > 0 && (
+                        <div className="card" style={{ padding: '0', overflow: 'hidden', marginBottom: '40px', background: '#eef4ff', borderColor: '#c3d9ff' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: posts[0].featured_image ? '1fr 1fr' : '1fr', gap: 0 }}>
+                                {posts[0].featured_image && (
+                                    <div style={{ position: 'relative', minHeight: '280px' }}>
+                                        <Image
+                                            src={posts[0].featured_image}
+                                            alt={posts[0].title}
+                                            fill
+                                            style={{ objectFit: 'cover' }}
+                                            sizes="50vw"
+                                        />
+                                    </div>
+                                )}
+                                <div style={{ padding: '40px 36px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+                                        <span style={{ background: '#1a73e8', color: '#fff', fontSize: '0.72rem', fontWeight: 700, padding: '3px 10px', borderRadius: '100px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>⭐ Featured</span>
+                                        <span style={{ fontSize: '0.8rem', color: '#6b7a99' }}>{formatDate(posts[0].created_at)}</span>
+                                    </div>
+                                    <h2 style={{ fontSize: 'clamp(1.3rem, 3vw, 2rem)', marginBottom: '14px', lineHeight: 1.3 }}>{posts[0].title}</h2>
+                                    <p style={{ marginBottom: '24px', fontSize: '1rem', lineHeight: 1.75, color: '#374151' }}>
+                                        {getExcerpt(posts[0])}
+                                    </p>
+                                    <Link href={`/blog/${posts[0].slug}`} className="btn btn-primary" style={{ fontSize: '0.875rem', padding: '10px 22px', minHeight: '40px' }}>
+                                        Read Article →
+                                    </Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    )}
 
-                    {/* Post Grid */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
-                        {posts.slice(1).map((post) => (
-                            <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
-                                <div className="card" style={{ padding: '28px 24px', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                                        <span style={{ fontSize: '0.75rem', color: '#1a73e8', fontWeight: 700, background: '#eef4ff', padding: '3px 10px', borderRadius: '100px' }}>{post.category}</span>
-                                        <span style={{ fontSize: '2rem' }}>{post.icon}</span>
+                    {/* Post Grid (remaining posts) */}
+                    {posts.length > 1 && (
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+                            {posts.slice(1).map((post) => (
+                                <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
+                                    <div className="card" style={{ padding: '0', overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                                        {post.featured_image && (
+                                            <div style={{ position: 'relative', height: '180px', overflow: 'hidden' }}>
+                                                <Image
+                                                    src={post.featured_image}
+                                                    alt={post.title}
+                                                    fill
+                                                    style={{ objectFit: 'cover' }}
+                                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                                />
+                                            </div>
+                                        )}
+                                        <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                            <h3 style={{ fontSize: '1.05rem', marginBottom: '12px', lineHeight: 1.45, color: '#0d1421' }}>{post.title}</h3>
+                                            <p style={{ fontSize: '0.875rem', lineHeight: 1.7, flex: 1, marginBottom: '20px', color: '#6b7a99' }}>
+                                                {getExcerpt(post)}
+                                            </p>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', paddingTop: '16px', borderTop: '1px solid #dce8ff' }}>
+                                                <span style={{ fontSize: '0.78rem', color: '#6b7a99' }}>📅 {formatDate(post.created_at)}</span>
+                                                <span style={{ marginLeft: 'auto', fontSize: '0.78rem', color: '#1a73e8', fontWeight: 600 }}>Read →</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h3 style={{ fontSize: '1.05rem', marginBottom: '12px', lineHeight: 1.45, color: '#0d1421' }}>{post.title}</h3>
-                                    <p style={{ fontSize: '0.875rem', lineHeight: 1.7, flex: 1, marginBottom: '20px' }}>{post.excerpt}</p>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px', paddingTop: '16px', borderTop: '1px solid #dce8ff' }}>
-                                        <span style={{ fontSize: '0.78rem', color: '#6b7a99' }}>📅 {post.date}</span>
-                                        <span style={{ fontSize: '0.78rem', color: '#6b7a99' }}>⏱ {post.readTime}</span>
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    )}
+
                 </div>
             </section>
 
-            {/* Newsletter / CTA */}
+            {/* CTA */}
             <section style={{ background: '#f0f5ff', borderTop: '1px solid #dce8ff', textAlign: 'center' }}>
                 <div className="container">
                     <div style={{ maxWidth: '560px', margin: '0 auto' }}>
