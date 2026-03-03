@@ -110,10 +110,11 @@ export default function Home() {
               <div className="pricing-save">&nbsp;</div>
               <ul className="pricing-features">
                 <li className="active"><span className="check">✓</span> 1 Device Connection</li>
-                <li className="active"><span className="check">✓</span> HD Channels</li>
-                <li className="active"><span className="check">✓</span> VOD Library</li>
-                <li><span className="cross">✗</span> Priority Support</li>
-                <li><span className="cross">✗</span> 4K Channels</li>
+                <li className="active"><span className="check">✓</span> 800+ HD/SD Live TV Channels</li>
+                <li className="active"><span className="check">✓</span> Android TV / Mobile / Desktop</li>
+                <li className="active"><span className="check">✓</span> Anti-Freeze Tech</li>
+                <li className="active"><span className="check">✓</span> Priority 24/7 Support</li>
+                <li className="active"><span className="check">✓</span> 99.9% Uptime Guarantee</li>
               </ul>
               <a href="https://www.srvcreationservices.co.in/" className="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
                 Buy Now
@@ -128,10 +129,11 @@ export default function Home() {
               <div className="pricing-save">Best Seller!</div>
               <ul className="pricing-features">
                 <li className="active"><span className="check">✓</span> 1 Device Connection</li>
-                <li className="active"><span className="check">✓</span> HD + 4K Channels</li>
-                <li className="active"><span className="check">✓</span> Full VOD Library</li>
-                <li className="active"><span className="check">✓</span> Priority 24/7 Support</li>
+                <li className="active"><span className="check">✓</span> 800+ HD/SD Live TV Channels</li>
+                <li className="active"><span className="check">✓</span> Android TV / Mobile / Desktop</li>
                 <li className="active"><span className="check">✓</span> Anti-Freeze Tech</li>
+                <li className="active"><span className="check">✓</span> Priority 24/7 Support</li>
+                <li className="active"><span className="check">✓</span> 99.9% Uptime Guarantee</li>
               </ul>
               <a href="https://www.srvcreationservices.co.in/" className="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
                 Buy Now
@@ -145,10 +147,11 @@ export default function Home() {
               <div className="pricing-save" style={{ color: '#4ade80' }}>Best Value!</div>
               <ul className="pricing-features">
                 <li className="active"><span className="check">✓</span> 1 Device Connection</li>
-                <li className="active"><span className="check">✓</span> HD + 4K Channels</li>
-                <li className="active"><span className="check">✓</span> Full VOD Library</li>
-                <li className="active"><span className="check">✓</span> Priority 24/7 Support</li>
+                <li className="active"><span className="check">✓</span> 800+ HD/SD Live TV Channels</li>
+                <li className="active"><span className="check">✓</span> Android TV / Mobile / Desktop</li>
                 <li className="active"><span className="check">✓</span> Anti-Freeze Tech</li>
+                <li className="active"><span className="check">✓</span> Priority 24/7 Support</li>
+                <li className="active"><span className="check">✓</span> 99.9% Uptime Guarantee</li>
               </ul>
               <a href="https://www.srvcreationservices.co.in/" className="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
                 Buy Now
