@@ -106,7 +106,7 @@ export default function Home() {
             {/* 30 Days */}
             <div className="card pricing-card">
               <div className="pricing-name">30 Days</div>
-              <div className="pricing-price">₹120<span>/mo</span></div>
+              <div className="pricing-price">₹120</div>
               <div className="pricing-save">&nbsp;</div>
               <ul className="pricing-features">
                 <li className="active"><span className="check">✓</span> 1 Device Connection</li>
@@ -125,7 +125,7 @@ export default function Home() {
             <div className="card pricing-card">
               <div className="popular-badge">⭐ Most Popular</div>
               <div className="pricing-name">90 Days</div>
-              <div className="pricing-price">₹299<span>/3mo</span></div>
+              <div className="pricing-price">₹299</div>
               <div className="pricing-save">Best Seller!</div>
               <ul className="pricing-features">
                 <li className="active"><span className="check">✓</span> 1 Device Connection</li>
@@ -143,7 +143,7 @@ export default function Home() {
             {/* 180 Days */}
             <div className="card pricing-card">
               <div className="pricing-name">180 Days</div>
-              <div className="pricing-price">₹599<span>/6mo</span></div>
+              <div className="pricing-price">₹599</div>
               <div className="pricing-save" style={{ color: '#4ade80' }}>Best Value!</div>
               <ul className="pricing-features">
                 <li className="active"><span className="check">✓</span> 1 Device Connection</li>
