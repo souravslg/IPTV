@@ -121,9 +121,9 @@ export default function Home() {
             </div>
 
             {/* 90 Days — Featured */}
-            <div className="card pricing-card featured">
+            <div className="card pricing-card">
               <div className="popular-badge">⭐ Most Popular</div>
-              <div className="pricing-name" style={{ color: '#93c5fd' }}>90 Days</div>
+              <div className="pricing-name">90 Days</div>
               <div className="pricing-price">₹299<span>/3mo</span></div>
               <div className="pricing-save">Best Seller!</div>
               <ul className="pricing-features">
