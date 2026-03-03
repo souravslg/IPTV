@@ -116,7 +116,7 @@ export default function Home() {
                 <li><span className="cross">✗</span> 4K Channels</li>
               </ul>
               <a href="https://www.srvcreationservices.co.in/" className="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
-                Get 30 Days
+                Buy Now
               </a>
             </div>
 
@@ -134,7 +134,7 @@ export default function Home() {
                 <li className="active"><span className="check">✓</span> Anti-Freeze Tech</li>
               </ul>
               <a href="https://www.srvcreationservices.co.in/" className="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
-                🚀 Start Streaming
+                Buy Now
               </a>
             </div>
 
@@ -151,7 +151,7 @@ export default function Home() {
                 <li className="active"><span className="check">✓</span> Anti-Freeze Tech</li>
               </ul>
               <a href="https://www.srvcreationservices.co.in/" className="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
-                Get 180 Days
+                Buy Now
               </a>
             </div>
           </div>
