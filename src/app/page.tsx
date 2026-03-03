@@ -14,6 +14,7 @@ export default function Home() {
             <li><a href="#plans" style={{ color: 'rgba(255,255,255,0.85)' }}>Pricing</a></li>
             <li><a href="#reviews" style={{ color: 'rgba(255,255,255,0.85)' }}>Reviews</a></li>
             <li><a href="#faq" style={{ color: 'rgba(255,255,255,0.85)' }}>FAQ</a></li>
+            <li><Link href="/blog" style={{ color: 'rgba(255,255,255,0.85)' }}>Blog</Link></li>
           </ul>
           <a href="https://api.whatsapp.com/send/?phone=919144015850&text=I+want+Free+Trial&type=phone_number&app_absent=" className="btn" target="_blank" rel="noopener noreferrer" style={{ padding: '9px 22px', minHeight: '38px', fontSize: '0.875rem', background: '#ffffff', color: '#1a73e8', fontWeight: 700, borderRadius: '100px' }}>
             Get Free Trial
@@ -229,6 +230,7 @@ export default function Home() {
           </p>
           <div className="footer-links">
             <Link href="/about">About Us</Link>
+            <Link href="/blog">Blog</Link>
             <Link href="/terms-of-service">Terms of Service</Link>
             <Link href="/privacy-policy">Privacy Policy</Link>
             <Link href="/setup-guide">Setup Guide</Link>
