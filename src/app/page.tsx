@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Home() {
   const currentYear = new Date().getFullYear()
 
@@ -226,10 +228,11 @@ export default function Home() {
             SRV Creation is the premier <strong>IPTV service provider</strong> in India, offering top-tier digital streaming tailored for the Indian audience. Discover why we are the <strong>best IPTV service India</strong> has to offer — premium HD/4K channels, massive VOD library, and unbeatable 2026 pricing.
           </p>
           <div className="footer-links">
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Setup Guide</a>
-            <a href="#">Contact Us</a>
+            <Link href="/about">About Us</Link>
+            <Link href="/terms-of-service">Terms of Service</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/setup-guide">Setup Guide</Link>
+            <Link href="/contact">Contact Us</Link>
           </div>
           <p className="footer-copy">© {currentYear} SRV Creation IPTV. All Rights Reserved.</p>
         </div>
