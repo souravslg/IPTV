@@ -76,70 +76,38 @@ export default async function BlogPage() {
                         </div>
                     )}
 
-                    {/* Featured Post (first post) */}
-                    {posts.length > 0 && (
-                        <div className="card" style={{ padding: '0', overflow: 'hidden', marginBottom: '40px', background: '#eef4ff', borderColor: '#c3d9ff' }}>
-                            <div style={{ display: 'grid', gridTemplateColumns: posts[0].featured_image ? '1fr 1fr' : '1fr', gap: 0 }}>
-                                {posts[0].featured_image && (
-                                    <div style={{ position: 'relative', minHeight: '280px' }}>
-                                        <Image
-                                            src={posts[0].featured_image}
-                                            alt={posts[0].title}
-                                            fill
-                                            style={{ objectFit: 'cover' }}
-                                            sizes="50vw"
-                                        />
-                                    </div>
-                                )}
-                                <div style={{ padding: '40px 36px' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-                                        <span style={{ background: '#1a73e8', color: '#fff', fontSize: '0.72rem', fontWeight: 700, padding: '3px 10px', borderRadius: '100px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>⭐ Featured</span>
-                                        <span style={{ fontSize: '0.8rem', color: '#6b7a99' }}>{formatDate(posts[0].created_at)}</span>
-                                    </div>
-                                    <h2 style={{ fontSize: 'clamp(1.3rem, 3vw, 2rem)', marginBottom: '14px', lineHeight: 1.3 }}>{posts[0].title}</h2>
-                                    <p style={{ marginBottom: '24px', fontSize: '1rem', lineHeight: 1.75, color: '#374151' }}>
-                                        {getExcerpt(posts[0])}
-                                    </p>
-                                    <Link href={`/blog/${posts[0].slug}`} className="btn btn-primary" style={{ fontSize: '0.875rem', padding: '10px 22px', minHeight: '40px' }}>
-                                        Read Article →
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Post Grid (remaining posts) */}
-                    {posts.length > 1 && (
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
-                            {posts.slice(1).map((post) => (
-                                <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
-                                    <div className="card" style={{ padding: '0', overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                                        {post.featured_image && (
-                                            <div style={{ position: 'relative', height: '180px', overflow: 'hidden' }}>
-                                                <Image
-                                                    src={post.featured_image}
-                                                    alt={post.title}
-                                                    fill
-                                                    style={{ objectFit: 'cover' }}
-                                                    sizes="(max-width: 768px) 100vw, 33vw"
-                                                />
-                                            </div>
-                                        )}
-                                        <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                                            <h3 style={{ fontSize: '1.05rem', marginBottom: '12px', lineHeight: 1.45, color: '#0d1421' }}>{post.title}</h3>
-                                            <p style={{ fontSize: '0.875rem', lineHeight: 1.7, flex: 1, marginBottom: '20px', color: '#6b7a99' }}>
-                                                {getExcerpt(post)}
-                                            </p>
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', paddingTop: '16px', borderTop: '1px solid #dce8ff' }}>
-                                                <span style={{ fontSize: '0.78rem', color: '#6b7a99' }}>📅 {formatDate(post.created_at)}</span>
-                                                <span style={{ marginLeft: 'auto', fontSize: '0.78rem', color: '#1a73e8', fontWeight: 600 }}>Read →</span>
-                                            </div>
+                    {/* Vertical post list — all posts */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '820px', margin: '0 auto' }}>
+                        {posts.map((post) => (
+                            <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
+                                <div className="card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'row', gap: 0 }}>
+                                    {post.featured_image && (
+                                        <div style={{ position: 'relative', width: '220px', minWidth: '220px', minHeight: '160px', flexShrink: 0 }}>
+                                            <Image
+                                                src={post.featured_image}
+                                                alt={post.title}
+                                                fill
+                                                style={{ objectFit: 'cover' }}
+                                                sizes="220px"
+                                            />
+                                        </div>
+                                    )}
+                                    <div style={{ padding: '28px 32px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                                        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '10px', lineHeight: 1.4, color: '#0d1421' }}>
+                                            {post.title}
+                                        </h2>
+                                        <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: '#6b7a99', marginBottom: '20px' }}>
+                                            {getExcerpt(post)}
+                                        </p>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                                            <span style={{ fontSize: '0.78rem', color: '#6b7a99' }}>📅 {formatDate(post.created_at)}</span>
+                                            <span style={{ marginLeft: 'auto', fontSize: '0.85rem', color: '#1a73e8', fontWeight: 600 }}>Read Article →</span>
                                         </div>
                                     </div>
-                                </Link>
-                            ))}
-                        </div>
-                    )}
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
 
                 </div>
             </section>
