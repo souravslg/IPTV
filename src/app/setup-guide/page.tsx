@@ -88,7 +88,7 @@ export default function SetupGuidePage() {
             {/* Header */}
             <header style={{ position: 'sticky', top: 0, zIndex: 100, background: '#1a73e8', borderBottom: '1px solid rgba(255,255,255,0.15)' }}>
                 <nav className="navbar">
-                    <Link href="/" className="navbar-logo" style={{ color: '#ffffff', textDecoration: 'none' }}>SRV Creation</Link>
+                    <Link href="/" className="navbar-logo" style={{ color: '#ffffff', textDecoration: 'none' }}>SRV Creation IPTV</Link>
                     <ul className="navbar-links">
                         <li><Link href="/" style={{ color: 'rgba(255,255,255,0.85)' }}>Home</Link></li>
                         <li><Link href="/#features" style={{ color: 'rgba(255,255,255,0.85)' }}>Features</Link></li>
@@ -207,7 +207,7 @@ export default function SetupGuidePage() {
             {/* Footer */}
             <footer className="footer">
                 <div className="container">
-                    <span className="footer-logo">SRV Creation</span>
+                    <span className="footer-logo">SRV Creation IPTV</span>
                     <div className="footer-links">
                         <Link href="/">Home</Link>
                         <Link href="/about">About Us</Link>

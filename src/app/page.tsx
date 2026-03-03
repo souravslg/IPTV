@@ -8,7 +8,7 @@ export default function Home() {
       {/* Fixed nav header area */}
       <header style={{ position: 'sticky', top: 0, zIndex: 100, background: '#1a73e8', borderBottom: '1px solid rgba(255,255,255,0.15)' }}>
         <nav className="navbar">
-          <div className="navbar-logo" style={{ color: '#ffffff' }}>SRV Creation</div>
+          <div className="navbar-logo" style={{ color: '#ffffff' }}>SRV Creation IPTV</div>
           <ul className="navbar-links">
             <li><a href="#features" style={{ color: 'rgba(255,255,255,0.85)' }}>Features</a></li>
             <li><a href="#plans" style={{ color: 'rgba(255,255,255,0.85)' }}>Pricing</a></li>
@@ -224,7 +224,7 @@ export default function Home() {
           ============================ */}
       <footer className="footer">
         <div className="container">
-          <span className="footer-logo">SRV Creation</span>
+          <span className="footer-logo">SRV Creation IPTV</span>
           <p className="footer-desc">
             SRV Creation is the premier <strong>IPTV service provider</strong> in India, offering top-tier digital streaming tailored for the Indian audience. Discover why we are the <strong>best IPTV service India</strong> has to offer — premium HD/4K channels, massive VOD library, and unbeatable 2026 pricing.
           </p>
