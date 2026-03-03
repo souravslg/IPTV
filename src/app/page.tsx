@@ -103,10 +103,10 @@ export default function Home() {
           </div>
 
           <div className="pricing-grid">
-            {/* 1 Month */}
+            {/* 30 Days */}
             <div className="card pricing-card">
-              <div className="pricing-name">1 Month</div>
-              <div className="pricing-price">₹399<span>/mo</span></div>
+              <div className="pricing-name">30 Days</div>
+              <div className="pricing-price">₹120<span>/mo</span></div>
               <div className="pricing-save">&nbsp;</div>
               <ul className="pricing-features">
                 <li className="active"><span className="check">✓</span> 1 Device Connection</li>
@@ -116,16 +116,16 @@ export default function Home() {
                 <li><span className="cross">✗</span> 4K Channels</li>
               </ul>
               <a href="https://www.srvcreationservices.co.in/" className="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
-                Get 1 Month
+                Get 30 Days
               </a>
             </div>
 
-            {/* 6 Months — Featured */}
+            {/* 90 Days — Featured */}
             <div className="card pricing-card featured">
               <div className="popular-badge">⭐ Most Popular</div>
-              <div className="pricing-name" style={{ color: '#93c5fd' }}>6 Months</div>
-              <div className="pricing-price">₹1,999<span>/6mo</span></div>
-              <div className="pricing-save">Save 16% — Best Seller!</div>
+              <div className="pricing-name" style={{ color: '#93c5fd' }}>90 Days</div>
+              <div className="pricing-price">₹299<span>/3mo</span></div>
+              <div className="pricing-save">Best Seller!</div>
               <ul className="pricing-features">
                 <li className="active"><span className="check">✓</span> 1 Device Connection</li>
                 <li className="active"><span className="check">✓</span> HD + 4K Channels</li>
@@ -138,11 +138,11 @@ export default function Home() {
               </a>
             </div>
 
-            {/* 12 Months */}
+            {/* 180 Days */}
             <div className="card pricing-card">
-              <div className="pricing-name">12 Months</div>
-              <div className="pricing-price">₹3,499<span>/yr</span></div>
-              <div className="pricing-save" style={{ color: '#4ade80' }}>Save 26% — Best Value!</div>
+              <div className="pricing-name">180 Days</div>
+              <div className="pricing-price">₹599<span>/6mo</span></div>
+              <div className="pricing-save" style={{ color: '#4ade80' }}>Best Value!</div>
               <ul className="pricing-features">
                 <li className="active"><span className="check">✓</span> 1 Device Connection</li>
                 <li className="active"><span className="check">✓</span> HD + 4K Channels</li>
@@ -151,7 +151,7 @@ export default function Home() {
                 <li className="active"><span className="check">✓</span> Anti-Freeze Tech</li>
               </ul>
               <a href="https://www.srvcreationservices.co.in/" className="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
-                Get 1 Year
+                Get 180 Days
               </a>
             </div>
           </div>
