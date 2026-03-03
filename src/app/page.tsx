@@ -40,7 +40,7 @@ export default function Home() {
             </h1>
 
             <p className="hero-sub">
-              <strong>10,000+ HD/4K channels</strong>, 50,000+ VODs & 24/7 support — zero buffering, instant setup.
+              <strong>800+ SD/HD channels</strong> &amp; 24/7 support — zero buffering, instant setup.
             </p>
 
             <div className="hero-cta">
