@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getPublishedPosts, BlogPost } from '@/lib/supabase';
+import { getPublishedPosts } from '@/lib/supabase';
 
 export const metadata: Metadata = {
     title: 'IPTV Blog | Tips, Guides & News | SRV Creation India',
@@ -18,13 +18,11 @@ function formatDate(iso: string) {
     });
 }
 
-function stripHtml(html: string) {
-    return html.replace(/<[^>]*>/g, '').trim();
-}
+type Post = Awaited<ReturnType<typeof getPublishedPosts>>[number];
 
-function getExcerpt(post: BlogPost) {
+function getExcerpt(post: Post) {
     if (post.meta_description) return post.meta_description;
-    return stripHtml(post.content ?? '').substring(0, 180) + '…';
+    return 'Read this article on the SRV Creation blog…';
 }
 
 export default async function BlogPage() {

@@ -18,8 +18,10 @@ export interface BlogPost {
     updated_at: string;
 }
 
+type BlogPostSummary = Pick<BlogPost, 'id' | 'title' | 'slug' | 'featured_image' | 'meta_description' | 'created_at'>;
+
 /** Fetch all published posts (for blog listing page) */
-export async function getPublishedPosts(): Promise<BlogPost[]> {
+export async function getPublishedPosts(): Promise<BlogPostSummary[]> {
     const { data, error } = await supabaseClient
         .from('blog_posts')
         .select('id, title, slug, featured_image, meta_description, created_at')
