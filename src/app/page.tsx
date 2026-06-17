@@ -46,8 +46,8 @@ export default function Home() {
             </p>
 
             <div className="hero-cta">
-              <a href="https://forms.gle/A2UhzF6CvFRrR31W7" className="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Join now and start streaming IPTV">
-                🚀 Join Now — Instant Setup
+              <a href="https://forms.gle/A2UhzF6CvFRrR31W7" className="btn btn-primary btn-animated" target="_blank" rel="noopener noreferrer" aria-label="Join now and start streaming IPTV">
+                <span className="rocket-anim">🚀</span> Join Now — Instant Setup
               </a>
               <a href="#features" className="btn btn-outline" aria-label="See IPTV features">
                 Explore Features
