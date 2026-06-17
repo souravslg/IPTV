@@ -78,7 +78,6 @@ export default function Home() {
             {[
               { icon: '📡', title: '10,000+ Live Channels', desc: 'Premium sports, regional Indian networks, news & entertainment in native HD quality.' },
               { icon: '⚡', title: 'Anti-Freeze Technology', desc: 'Our powerful Indian servers guarantee 99.9% uptime — no buffering during cricket or live events.' },
-              { icon: '🎬', title: '50,000+ VOD Library', desc: 'Latest Bollywood, Hollywood movies and TV series updated weekly, available on demand.' },
               { icon: '📱', title: 'Works on Any Device', desc: 'Smart TVs, Android, iOS, Firestick, MAG boxes, Kodi, PC and more — all supported.' },
             ].map((f, i) => (
               <div key={i} className="card feature-card">
