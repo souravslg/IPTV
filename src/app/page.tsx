@@ -44,7 +44,7 @@ export default function Home() {
             </p>
 
             <div className="hero-cta">
-              <a href="https://www.srvcreationservices.co.in/" className="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Join now and start streaming IPTV">
+              <a href="https://forms.gle/A2UhzF6CvFRrR31W7" className="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Join now and start streaming IPTV">
                 🚀 Join Now — Instant Setup
               </a>
               <a href="#features" className="btn btn-outline" aria-label="See IPTV features">

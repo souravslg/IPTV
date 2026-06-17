@@ -111,7 +111,7 @@ export default function AboutPage() {
                     <h2 style={{ color: '#fff', marginBottom: '16px' }}>Ready to Start Streaming?</h2>
                     <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: '32px' }}>Join thousands of happy Indian families. No contract, cancel anytime.</p>
                     <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <a href="https://www.srvcreationservices.co.in/" className="btn" target="_blank" rel="noopener noreferrer" style={{ background: '#fff', color: '#1a73e8', fontWeight: 700 }}>🚀 Get Started Now</a>
+                        <a href="https://forms.gle/A2UhzF6CvFRrR31W7" className="btn" target="_blank" rel="noopener noreferrer" style={{ background: '#fff', color: '#1a73e8', fontWeight: 700 }}>🚀 Get Started Now</a>
                         <Link href="/contact" className="btn" style={{ background: 'transparent', color: '#fff', border: '2px solid rgba(255,255,255,0.5)' }}>Contact Us</Link>
                     </div>
                 </div>

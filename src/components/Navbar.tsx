@@ -114,7 +114,7 @@ export default function Navbar() {
             Free Trial
           </a>
           <a
-            href="https://www.srvcreationservices.co.in/"
+            href="https://forms.gle/A2UhzF6CvFRrR31W7"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
@@ -216,7 +216,7 @@ export default function Navbar() {
             Free Trial
           </a>
           <a
-            href="https://www.srvcreationservices.co.in/"
+            href="https://forms.gle/A2UhzF6CvFRrR31W7"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
