@@ -33,7 +33,9 @@ export default async function BlogPage() {
             {/* Header */}
             <header style={{ position: 'sticky', top: 0, zIndex: 100, background: '#1a73e8', borderBottom: '1px solid rgba(255,255,255,0.15)' }}>
                 <nav className="navbar">
-                    <Link href="/" className="navbar-logo" style={{ color: '#ffffff', textDecoration: 'none' }}>SRV Creation IPTV</Link>
+                    <Link href="/" className="navbar-logo" style={{ color: '#ffffff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+                        SRV Creation IPTV<span className="moving-tv">📺</span>
+                    </Link>
                     <ul className="navbar-links">
                         <li><Link href="/" style={{ color: 'rgba(255,255,255,0.85)' }}>Home</Link></li>
                         <li><Link href="/#features" style={{ color: 'rgba(255,255,255,0.85)' }}>Features</Link></li>

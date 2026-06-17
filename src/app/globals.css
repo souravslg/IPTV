@@ -822,3 +822,32 @@ strong {
 .blog-content em {
   font-style: italic;
 }
+
+/* ========================
+   ANIMATED TV ICON
+   ======================== */
+@keyframes floatWiggle {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(3px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.moving-tv {
+  display: inline-block;
+  animation: floatWiggle 2.5s ease-in-out infinite;
+  margin-left: 6px;
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
