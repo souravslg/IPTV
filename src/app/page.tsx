@@ -8,9 +8,9 @@ export default function Home() {
       {/* Fixed nav header area */}
       <header style={{ position: 'sticky', top: 0, zIndex: 100, background: '#1a73e8', borderBottom: '1px solid rgba(255,255,255,0.15)' }}>
         <nav className="navbar">
-          <div className="navbar-logo" style={{ color: '#ffffff', display: 'flex', alignItems: 'center' }}>
+          <a href="/" className="navbar-logo" style={{ color: '#ffffff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
             SRV Creation IPTV<span className="moving-tv">📺</span>
-          </div>
+          </a>
           <ul className="navbar-links">
             <li><a href="#features" style={{ color: 'rgba(255,255,255,0.85)' }}>Features</a></li>
             <li><a href="#plans" style={{ color: 'rgba(255,255,255,0.85)' }}>Pricing</a></li>
