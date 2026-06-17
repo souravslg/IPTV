@@ -116,7 +116,7 @@ export default function Home() {
                 <li className="active"><span className="check">✓</span> Priority 24/7 Support</li>
                 <li className="active"><span className="check">✓</span> 99.9% Uptime Guarantee</li>
               </ul>
-              <a href="https://www.srvcreationservices.co.in/" className="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
+              <a href="https://forms.gle/A2UhzF6CvFRrR31W7" className="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
                 Buy Now
               </a>
             </div>
@@ -135,7 +135,7 @@ export default function Home() {
                 <li className="active"><span className="check">✓</span> Priority 24/7 Support</li>
                 <li className="active"><span className="check">✓</span> 99.9% Uptime Guarantee</li>
               </ul>
-              <a href="https://www.srvcreationservices.co.in/" className="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
+              <a href="https://forms.gle/A2UhzF6CvFRrR31W7" className="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
                 Buy Now
               </a>
             </div>
@@ -153,7 +153,7 @@ export default function Home() {
                 <li className="active"><span className="check">✓</span> Priority 24/7 Support</li>
                 <li className="active"><span className="check">✓</span> 99.9% Uptime Guarantee</li>
               </ul>
-              <a href="https://www.srvcreationservices.co.in/" className="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
+              <a href="https://forms.gle/A2UhzF6CvFRrR31W7" className="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
                 Buy Now
               </a>
             </div>

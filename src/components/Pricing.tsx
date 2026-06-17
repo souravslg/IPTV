@@ -172,7 +172,7 @@ export default function Pricing() {
                                 </ul>
                             </div>
 
-                            <a href="https://www.srvcreationservices.co.in/"
+                            <a href="https://forms.gle/A2UhzF6CvFRrR31W7"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-primary"
